@@ -155,6 +155,11 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 
+#Custom ignore
 App_Data/Temp
 App_Data/Logs
-/*.suo
+0b0101f7-9394-48f3-a581-dd3f18480265
+/App_Data/access.config
+/App_Data/umbraco.config
+/App_Data/App_Data
+/App_Data/preview
