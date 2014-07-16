@@ -1,0 +1,22 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    var items = ((dynamic)ViewData["menuItem"]).Children.Where("UmbracoNaviHide == false");
+}
+<ul>
+    @if (items.Count() > 0)
+    {
+        foreach (var item in items)
+        {
+            @* If the Id of the item is the same as the Id of the current page then we want to add the class "current_page_item" *@
+            @* Otherwise, we set the class to null, that way it will not even be added to the <li> element *@
+            <li class="@(CurrentPage.Id == item.Id ? "current_page_item" : null)">
+                <a href="@item.Url">@item.Name</a>
+                @{
+            var dict = new ViewDataDictionary(ViewData);
+            dict["menuItem"] = item;
+            Html.RenderPartial("umbTopNavigationList", dict/*new RenderModel(homePage, Model.CurrentCulture)*/);
+                }
+            </li>
+        }
+    }
+</ul>

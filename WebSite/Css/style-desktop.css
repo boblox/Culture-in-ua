@@ -287,7 +287,7 @@
 		#nav:after
 		{
 			content: '';
-			position: absolute;
+			/*position: absolute;*/
 			left: 0;
 			top: 0;
 			width: 100%;
@@ -298,16 +298,19 @@
 
 		#nav ul
 		{
-			position: relative;
+			/*position: absolute;*/
 			z-index: 1001;
 		}
 	
+        #nav > ul > li {
+            display: inline-block;
+        }
+
 		#nav li
 		{
-			display: inline-block;
 			margin: 0 0.5em 0 0.5em;
 			top: 0;
-			position: relative;
+			/*position: relative;*/
 			-moz-transition: top .15s ease-in-out;
 			-webkit-transition: top .15s ease-in-out;
 			-o-transition: top .15s ease-in-out;
@@ -317,7 +320,7 @@
 
 			#nav li a
 			{
-				position: relative;
+				/*position: relative;*/
 				display: block;
 				text-decoration: none;
 				color: #6b7770;
@@ -348,7 +351,7 @@
 			{
 			}
 
-				#nav li.current_page_item a
+				#nav li.current_page_item > a
 				{
 					background: #e3daa8;
 					color: #fff;

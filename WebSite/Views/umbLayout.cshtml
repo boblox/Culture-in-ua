@@ -1,4 +1,4 @@
-@inherits UmbracoTemplatePage
+﻿@inherits UmbracoTemplatePage
 @{
     Layout = null;
 }<!DOCTYPE html>
@@ -15,6 +15,7 @@
     <meta name="keywords" content="" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700" rel="stylesheet" />
     <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.dropotron.min.js"></script>
     <script src="/js/config.js"></script>
     <script src="/js/skel.min.js"></script>
     <script src="/js/skel-panels.min.js"></script>
@@ -43,7 +44,7 @@
     @RenderBody()
 
     <!-- Footer -->
-    <footer id="footer" class="container">
+    @*<footer id="footer" class="container">
         <div class="row">
             <div class="12u">
                 @{ Html.RenderPartial("umbAbout"); }
@@ -61,7 +62,7 @@
             </div>
             <!-- /Copyright -->
         </div>
-    </footer>
+    </footer>*@
     <!-- /Footer -->
 </body>
 </html>
