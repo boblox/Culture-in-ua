@@ -5,10 +5,6 @@
     // (1) means: go up to level 1 and stop looking for more ancestors when you get there
     // First() gets the first ancestor found (the home page, on level 1)
     var homePage = CurrentPage.AncestorsOrSelf(1).First();
-
-    // The menu items we want are all of the children of the homepage
-    // We also check if "Hide in navigation" is on in the menu, we shouldn't show hidden items
-    var menuItems = homePage.Children.Where("UmbracoNaviHide == false");
 }
 <!-- Nav -->
 <nav id="nav" class="skel-panels-fixed">
@@ -16,5 +12,10 @@
         var dict = new ViewDataDictionary(ViewData) { { "menuItem", homePage } };
         Html.RenderPartial("umbTopNavigationList", dict);
     }
+    <div class="languageSwitcher">
+        <umbraco:macro language="cshtml" runat="server">
+            @RenderPage("~/macroscripts/MultiLanguage/LanguageSwitcher/Flags.cshtml", Model)
+        </umbraco:macro>
+    </div>
 </nav>
 <!-- /Nav -->

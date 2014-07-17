@@ -284,10 +284,17 @@
 		text-transform: uppercase;
 	}
 
+        #nav .languageSwitcher {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            z-index: 1050;
+        }
+
 		#nav:after
 		{
 			content: '';
-			/*position: absolute;*/
+			position: absolute;
 			left: 0;
 			top: 0;
 			width: 100%;
@@ -298,7 +305,7 @@
 
 		#nav ul
 		{
-			/*position: absolute;*/
+			position: relative;
 			z-index: 1001;
 		}
 	
