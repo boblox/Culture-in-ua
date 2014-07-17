@@ -2,21 +2,24 @@
 @{
     var items = ((dynamic)ViewData["menuItem"]).Children.Where("UmbracoNaviHide == false");
 }
-<ul>
-    @if (items.Count() > 0)
-    {
-        foreach (var item in items)
+
+@if (items.Count() > 0)
+{
+    <ul>
+        @foreach (var item in items)
         {
+            var itemTitle = string.IsNullOrWhiteSpace(item.Title) ? item.Name : item.Title;
+
             @* If the Id of the item is the same as the Id of the current page then we want to add the class "current_page_item" *@
             @* Otherwise, we set the class to null, that way it will not even be added to the <li> element *@
             <li class="@(CurrentPage.Id == item.Id ? "current_page_item" : null)">
-                <a href="@item.Url">@item.Name</a>
+                <a href="@item.Url">@itemTitle</a>
                 @{
             var dict = new ViewDataDictionary(ViewData);
             dict["menuItem"] = item;
-            Html.RenderPartial("umbTopNavigationList", dict/*new RenderModel(homePage, Model.CurrentCulture)*/);
+            Html.RenderPartial("umbTopNavigationList", dict);
                 }
             </li>
         }
-    }
-</ul>
+    </ul>
+}

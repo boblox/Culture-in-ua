@@ -304,11 +304,12 @@
 	
         #nav > ul > li {
             display: inline-block;
+            margin: 0 0.5em 0 0.5em;
         }
 
 		#nav li
 		{
-			margin: 0 0.5em 0 0.5em;
+			/*margin: 0 0.5em 0 0.5em;*/
 			top: 0;
 			/*position: relative;*/
 			-moz-transition: top .15s ease-in-out;
@@ -318,6 +319,16 @@
 			transition: top .15s ease-in-out;
 		}
 
+            #nav > ul > li > a {
+                border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;
+            }
+
+            #nav ul.dropotron.level-0 {
+                border: 10px solid;
+                border-radius: 15px;
+            }
+
 			#nav li a
 			{
 				/*position: relative;*/
@@ -326,8 +337,8 @@
 				color: #6b7770;
 				top: -3px;
 				padding: 3px 1.5em 0.25em 1.5em;
-				border-bottom-left-radius: 6px;
-				border-bottom-right-radius: 6px;
+				/*border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;*/
 				outline: 0;
 				-moz-transition: background-color .075s ease-in-out, color .075s ease-in-out;
 				-webkit-transition: background-color .075s ease-in-out, color .075s ease-in-out;
@@ -338,7 +349,7 @@
 
 			#nav li:hover
 			{
-				top: 3px;
+				top: 3px; /*Don't work'*/
 			}
 
 				#nav li:hover a
