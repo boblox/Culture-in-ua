@@ -8,7 +8,7 @@
 }
 <!-- Features -->
 <section class="is-features">
-    <h2 class="major"><span>Wonderful featured pages</span></h2>
+    <h2 class="major"><span>@Umbraco.GetDictionaryValue("FeaturedArticlesTitle")</span></h2>
     <div>
         <div class="row">
             @foreach (var feature in homePage.umbTextPages.Where("featuredPage"))
@@ -17,7 +17,7 @@
                     <!-- Feature -->
                     <section class="is-feature">
                         <a href="@feature.Url" class="image image-full"><img src="@feature.Image" alt="" /></a>
-                        <h3><a href="@feature.Url">@feature.Name</a></h3>
+                        <h3><a href="@feature.Url">@feature.Title</a></h3>
                         @Umbraco.Truncate(feature.BodyText, 100)
                     </section>
                     <!-- /Feature -->

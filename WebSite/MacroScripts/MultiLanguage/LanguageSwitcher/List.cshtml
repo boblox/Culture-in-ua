@@ -3,11 +3,11 @@
     {
         if (string.IsNullOrEmpty(data.Url))
         {
-        <li style="display: inline"><strong>@data.NativeName</strong></li>
+            <li class="current_page_item"><a href="#" style="cursor: default">@data.LanguageCode</a></li>
         }
         else
-        {        
-        <li style="display: inline"><a href="@data.Url">@data.NativeName</a></li>
+        {
+            <li><a href="@data.Url">@data.LanguageCode</a></li>
         }
     }
 </ul>

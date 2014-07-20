@@ -2,20 +2,24 @@
 @{
     Layout = "umbLayout.cshtml";
 }
-@{ Html.RenderPartial("umbHomepageBanner"); }
+@*@{ Html.RenderPartial("umbHomepageBanner"); }*@
+
 <!-- Main -->
 <div id="main-wrapper">
     <div id="main" class="container">
-        @*<div class="row">
-            <div class="12u">
+        <div class="row">
+            <div class="9u">
                 @{ Html.RenderPartial("umbFeatures"); }
             </div>
-        </div>*@
-        @*<div class="row">
-            <div class="12u">
-                @{   Html.RenderPartial("umbNewsOverviewWidget"); }
+            <div class="3u">
+                @{Html.RenderPartial("umbLatestNewsWithHeaderWidget"); }
             </div>
-        </div>*@
+        </div>
+        @*<div class="row">
+                <div class="12u">
+                    @{Html.RenderPartial("umbNewsOverviewWidget"); }
+                </div>
+            </div>*@
     </div>
 </div>
 <!-- /Main -->

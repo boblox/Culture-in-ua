@@ -13,7 +13,8 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700" rel="stylesheet" />
+    @*<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700" rel="stylesheet" />*@
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700&subset=cyrillic,latin' rel='stylesheet' type='text/css' />
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.dropotron.min.js"></script>
     <script src="/js/config.js"></script>
@@ -30,39 +31,41 @@
 </head>
 <body class="homepage">
     <!-- Header -->
-    <header id="header">
+    @*<header id="header">
         <div class="logo">
             <div>
                 <h1><a href="/" id="logo">@Umbraco.Field("siteName", recursive: true)</a></h1>
                 <span class="byline">@Umbraco.Field("byline", recursive: true)</span>
             </div>
         </div>
-    </header>
+    </header>*@
     <!-- /Header -->
     @{ Html.RenderPartial("umbTopNavigation"); }
+    
+    @{ Html.RenderPartial("umbHeader"); }
 
     @RenderBody()
 
     <!-- Footer -->
-    @*<footer id="footer" class="container">
-        <div class="row">
+    <footer id="footer" class="container">
+        @*<div class="row">
             <div class="12u">
                 @{ Html.RenderPartial("umbAbout"); }
             </div>
-        </div>
+        </div>*@
         <div class="row">
             <div class="12u">
                 @{ Html.RenderPartial("umbSocial"); }
             </div>
         </div>
-        <div class="row">
+        @*<div class="row">
             <!-- Copyright -->
             <div id="copyright">
                 &copy; @DateTime.Now.Year @Umbraco.Field("copyright", recursive: true) | Images: <a href="http://fotogrph.com">fotogrph</a> + <a href="http://iconify.it">Iconify.it</a> | Design: <a href="http://html5up.net/">HTML5 UP</a>
             </div>
             <!-- /Copyright -->
-        </div>
-    </footer>*@
+        </div>*@
+    </footer>
     <!-- /Footer -->
 </body>
 </html>

@@ -66,7 +66,7 @@
 
                                 @Umbraco.Truncate(item.BodyText, 200)
 
-                                <a href="@item.Url" class="button">Continue Reading</a>
+                                <a href="@item.Url" class="button">@Umbraco.GetDictionaryValue("ContinueReadingEvents")</a>
                             </section>
                         }
                     </article>
