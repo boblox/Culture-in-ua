@@ -1,7 +1,11 @@
 ﻿@inherits UmbracoTemplatePage
-<!-- Main Image -->
+@{
+    var homePage = CurrentPage.AncestorsOrSelf(1).First();
+}
+<!-- Header with logo -->
 
-<div id="header" style="background: url('@(Umbraco.Field("headerImage", recursive:true))') center center no-repeat;">
-    <a id="header-image" href="/"><img src="@(Umbraco.Field("headerLogo", recursive:true))" alt="Logo"/></a>
+<div id="header" style="background: url('@(Umbraco.Field("headerImage", recursive:true))') center bottom no-repeat;">
+    <a id="header-logo"
+       href="@homePage.Url" style="background: url('@(Umbraco.Field("headerLogo", recursive:true))') no-repeat #FFFFFF;"></a>
 </div>
-<!-- /Main Image -->
+<!-- /Header with logo  -->

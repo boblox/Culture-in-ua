@@ -16,11 +16,11 @@ window._skel_panels_config = {
 
 jQuery(function () {
     jQuery('#nav > ul').dropotron({
-        offsetY: -20,
+        offsetY: -6,
         offsetX: -1,
         mode: 'fade',
         noOpenerFade: true,
-        alignment: 'center',
+        alignment: 'left',
         detach: false
     });
 });

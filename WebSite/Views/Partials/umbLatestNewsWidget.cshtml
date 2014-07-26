@@ -15,7 +15,7 @@
     // Then order them, first by publishDate (a property the editor can explicitly set on the news item)
     // and then by createDate, which is set by Umbraco automatically when a page gets created.
     // Finally, take the first 5 items to show in the news overview
-    var newsItems = newsOverview.umbNewsItems.OrderBy("publishDate desc, createDate desc").Take(5);
+    var newsItems = newsOverview.umbNewsItems.OrderBy("publishDate desc, createDate desc").Take(4);
 }
 
 @*<h2 class="major"><span>Recent Posts</span></h2>*@

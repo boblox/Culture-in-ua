@@ -5,13 +5,15 @@
     // (1) means: go up to level 1 and stop looking for more ancestors when you get there
     // First() gets the first ancestor found (the home page, on level 1)
     var homePage = CurrentPage.AncestorsOrSelf(1).First();
+
+    var allChildren = homePage.Descendants().Where("featuredPage");
 }
 <!-- Features -->
 <section class="is-features">
     <h2 class="major"><span>@Umbraco.GetDictionaryValue("FeaturedArticlesTitle")</span></h2>
     <div>
         <div class="row">
-            @foreach (var feature in homePage.umbTextPages.Where("featuredPage"))
+            @foreach (var feature in allChildren)
             {
                 <div class="3u">
                     <!-- Feature -->

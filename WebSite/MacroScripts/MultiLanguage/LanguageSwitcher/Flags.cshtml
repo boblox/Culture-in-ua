@@ -1,4 +1,4 @@
-﻿@foreach (var data in MultiLanguage.Functions.GetUrlsAndLanguages(PageData[0].Content.Id))
+﻿@foreach (var data in MultiLanguage.Functions.GetUrlsAndLanguages(Model.Id))
 {
     if (string.IsNullOrEmpty(data.Url))
     {

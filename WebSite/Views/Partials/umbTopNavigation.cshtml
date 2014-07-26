@@ -13,9 +13,7 @@
         Html.RenderPartial("umbTopNavigationList", dict);
     }
     <div class="languageSwitcher">
-        <umbraco:macro language="cshtml" runat="server">
-            @RenderPage("~/macroscripts/MultiLanguage/LanguageSwitcher/List.cshtml", Model)
-        </umbraco:macro>
+        @Umbraco.RenderMacro("MLLanguageSwitcher", new { rendertype = "List" })
     </div>
 </nav>
 <!-- /Nav -->

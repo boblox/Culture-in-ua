@@ -98,6 +98,17 @@ article {
         margin-bottom: 0;
     }
 
+input, textarea, select {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background: #f2f5f3;
+    color: #6b7770;
+    font-size: 11.5pt;
+    border-radius: 5px;
+    border: 1px #6b7770 solid;
+    padding: 2px 5px;
+}
+
 .byline {
     display: block;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -481,7 +492,7 @@ ul.meta {
 
 #main-wrapper {
     background: #fff;
-    border-top: solid 5px #e3daa8;
+    /*border-top: solid 5px #e3daa8;*/
     border-bottom: solid 5px #c1cac5;
 }
 
@@ -605,6 +616,10 @@ ul.meta {
 #footer {
 }
 
+    #footer .row > * {
+        padding-top: 0;
+    }
+
     #footer a {
         color: inherit;
     }
@@ -625,4 +640,36 @@ ul.meta {
     #copyright a {
         color: inherit;
     }
+/*********************************************************************************/
+/* Workshop Application                                                          */
+/*********************************************************************************/
+.workshop-application-section {
+    margin-bottom: 50px;
+}
+
+.workshop-application-section .row {
+    margin-left: -15px;
+}
+
+.workshop-application-section input {
+    /*width: 25%;*/
+    width: 353px;
+}
+
+.workshop-application-section select {
+    /*width: 25%;*/
+    width: 353px;
+}
+
+.workshop-application-section textarea {
+    /*width: 25%;*/
+    width: 353px;
+    min-height: 125px;
+}
+
+.workshop-application-header {
+    margin-bottom: 40px;
+}
+
+
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
