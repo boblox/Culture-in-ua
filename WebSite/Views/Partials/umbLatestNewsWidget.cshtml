@@ -37,7 +37,10 @@
 
         <li>
             <article class="is-post-summary">
-                <a href="@newsItem.Url" class="image image-full"><img src="@newsItem.Image" alt="" /></a>
+                @if (!string.IsNullOrWhiteSpace(newsItem.Image))
+                {
+                    <a href="@newsItem.Url" class="image image-full"><img src="@newsItem.Image" alt="" /></a>
+                }
                 <h3><a href="@newsItem.Url">@title</a></h3>
                 <ul class="meta">
                     <li class="timestamp">@dateTime.ToString("f")</li>

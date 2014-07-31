@@ -30,9 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\Libs\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\Libs\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
@@ -43,13 +51,21 @@
     <Reference Include="umbraco">
       <HintPath>..\WebSite\Bin\umbraco.dll</HintPath>
     </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.5261.28127, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WebSite\Bin\Umbraco.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\WorkShopApplicationController.cs" />
+    <Compile Include="DAL\DataContext.cs" />
     <Compile Include="Enums\LegalStatus.cs" />
     <Compile Include="Enums\EnglishLevel.cs" />
     <Compile Include="Helpers\HtmlHelperExtensions.cs" />
-    <Compile Include="Models\WorkShopApplicationModel.cs" />
+    <Compile Include="Helpers\MyDateTimeModelBinder.cs" />
+    <Compile Include="Helpers\RequiredTrueAttribute.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\WorkShopApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Localization.uk-ua.Designer.cs">
       <DependentUpon>Localization.uk-ua.resx</DependentUpon>
@@ -70,7 +86,11 @@
     <EmbeddedResource Include="Resources\Localization.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

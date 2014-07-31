@@ -120,6 +120,12 @@
   <data name="ApplicationModelBirthDate" xml:space="preserve">
     <value>Дата народження</value>
   </data>
+  <data name="ApplicationModelCity" xml:space="preserve">
+    <value>Місто</value>
+  </data>
+  <data name="ApplicationModelCountry" xml:space="preserve">
+    <value>Країна</value>
+  </data>
   <data name="ApplicationModelEmail" xml:space="preserve">
     <value>Email</value>
   </data>
@@ -160,19 +166,25 @@
     <value>Назва організації/Ініціативи</value>
   </data>
   <data name="ApplicationModelParticipantsNumber" xml:space="preserve">
-    <value>Number of participants</value>
+    <value>Кількість учасників</value>
   </data>
   <data name="ApplicationModelPhone" xml:space="preserve">
     <value>Телефон</value>
   </data>
   <data name="ApplicationModelProcessData" xml:space="preserve">
-    <value>Від організації на воркшоп подається кількість осіб</value>
+    <value>Згода на обробку даних</value>
   </data>
   <data name="ApplicationModelProfession" xml:space="preserve">
     <value>Професія/вид діяльності</value>
   </data>
   <data name="ApplicationModelRequiredField" xml:space="preserve">
     <value>*</value>
+  </data>
+  <data name="ApplicationModelSurname" xml:space="preserve">
+    <value>Прізвище</value>
+  </data>
+  <data name="DateTimeInvalid" xml:space="preserve">
+    <value>{0} є неприпустимим форматом дати</value>
   </data>
   <data name="LegalStatus_NotRegisteredInitiative" xml:space="preserve">
     <value>Не зареєстрована ініціатива</value>
@@ -182,5 +194,20 @@
   </data>
   <data name="LegalStatus_PublicOrganization" xml:space="preserve">
     <value>Громадська організація</value>
+  </data>
+  <data name="WorkShopApplicationErrors" xml:space="preserve">
+    <value>Будь ласка, виправте поля відмічені червоним</value>
+  </data>
+  <data name="WorkShopApplicationMotivation" xml:space="preserve">
+    <value>Мотивація</value>
+  </data>
+  <data name="WorkShopApplicationPersonalData" xml:space="preserve">
+    <value>Особисті дані</value>
+  </data>
+  <data name="WorkShopApplicationReceived" xml:space="preserve">
+    <value>Ваша заявка успішно прийнята. Дякуємо!</value>
+  </data>
+  <data name="WorkShopApplicationSubmit" xml:space="preserve">
+    <value>Надіслати</value>
   </data>
 </root>

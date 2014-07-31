@@ -1,5 +1,7 @@
-﻿@using Umbraco.Web;
+﻿@using Logic.Models;
 @using Logic.Controllers;
-@using Logic.Models;
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
-@{Html.RenderPartial("umbWorkShopApplication", new WorkShopApplicationModel());}
+@Html.Action("Index", "WorkShopApplication")
+
+@*@{Html.RenderPartial("umbWorkShopApplication", new WorkShopApplication());}*@

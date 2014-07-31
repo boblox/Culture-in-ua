@@ -50,22 +50,13 @@ h2.major {
     background-size: contain !important;
 }
 
-
-/*#header {
-    height: 440px;
-    max-width: 1500px;
-    margin: 0 auto;
+#header-logo {
+    top: 55px;
+    left: 15px;
+    height: 140px;
+    width: 255px;
 }
 
-#header-logo {
-    display: block;
-    position: relative;
-    top: 100px;
-    left: 40px;
-    height: 110px;
-    width: 100px;
-    background-size: contain !important;
-}*/
 
 /*********************************************************************************/
 /* Banner                                                                        */

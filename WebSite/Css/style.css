@@ -425,6 +425,18 @@ ul.meta {
             background-position: -16px 0px;
         }
 
+.noPadding {
+    padding: 0;
+}
+
+/*********************************************************************************/
+/* Validation                                                                    */
+/*********************************************************************************/
+
+.field-validation-error {
+    color: red;
+}
+
 /*********************************************************************************/
 /* Section + Article Types                                                       */
 /*********************************************************************************/
@@ -647,29 +659,42 @@ ul.meta {
     margin-bottom: 50px;
 }
 
-.workshop-application-section .row {
-    margin-left: -15px;
-}
+    .workshop-application-section .row {
+        margin-left: -15px;
+    }
 
-.workshop-application-section input {
-    /*width: 25%;*/
-    width: 353px;
-}
+    .workshop-application-section input[type=text],
+    .workshop-application-section input[type=email],
+    .workshop-application-section input[type=tel] {
+        /*width: 25%;*/
+        width: 353px;
+    }
 
-.workshop-application-section select {
-    /*width: 25%;*/
-    width: 353px;
-}
+    .workshop-application-section input[type=number] {
+        /*width: 25%;*/
+        width: 100px;
+    }
 
-.workshop-application-section textarea {
-    /*width: 25%;*/
-    width: 353px;
-    min-height: 125px;
-}
+    .workshop-application-section select {
+        /*width: 25%;*/
+        width: 353px;
+    }
+
+    .workshop-application-section textarea {
+        /*width: 25%;*/
+        width: 353px;
+        min-height: 125px;
+    }
 
 .workshop-application-header {
     margin-bottom: 40px;
 }
 
+.workshop-application-errors {
+    color: red;
+    background-color: #c1cac5;
+    border-radius: 5px;
+    padding: 10px;
+}
 
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

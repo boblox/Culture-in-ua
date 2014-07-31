@@ -1,191 +1,128 @@
-﻿@using Logic.Helpers
+﻿@using System.Linq.Expressions
+@using Logic.Helpers
+@using Logic.Models
 @using Umbraco.Web;
 @using Logic.Controllers;
-@using Logic.Models;
+
+@*TODO: to be honest this view should be in Logic project*@
 
 @*@Html.Action("Index", "WorkShopApplication")*@
 
-@model WorkShopApplicationModel
+@model WorkShopApplication
 @{
     const string dateFormat = "{0:dd.MM.yyyy}";
 }
 
+@functions
+{
+    private delegate MvcHtmlString EditorDelegate<TModel, TValue>(Expression<Func<TModel, TValue>> expression);
+
+    HelperResult PersonalData<T>(Expression<Func<WorkShopApplication, T>> expression, EditorDelegate<WorkShopApplication, T> editor)
+    {
+        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
+    }
+
+    HelperResult MotivationData<T>(Expression<Func<WorkShopApplication, T>> expression, EditorDelegate<WorkShopApplication, T> editor)
+    {
+        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
+    }
+
+    HelperResult PersonalData<T>(Expression<Func<WorkShopApplication, T>> expression, MvcHtmlString editorString)
+    {
+        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editorString);
+    }
+}
+
+@helper PersonalDataHelper(MvcHtmlString labelString, MvcHtmlString validationString, MvcHtmlString editorString)
+{
+    <div class="row">
+        <div class="3u">
+            @labelString
+        </div>
+        <div class="9u">
+            @editorString
+            @validationString
+        </div>
+    </div>
+}
+
+@helper MotivationDataHelper(MvcHtmlString labelString, MvcHtmlString validationString, MvcHtmlString editorString)
+{
+    <div class="row">
+        <div class="4u">
+            @labelString
+        </div>
+        <div class="8u">
+            @editorString
+            @validationString
+        </div>
+    </div>
+}
 
 @if (TempData["Application received"] != null)
 {
-    <p>Дякуємо за заявку</p>
+    <h3>@Html.Localize("WorkShopApplicationReceived")</h3>
 }
 else
 {
     using (Html.BeginUmbracoForm<WorkShopApplicationController>("SendApplication"))
     {
+        if (!ViewData.ModelState.IsValid)
+        {
+            <p class="workshop-application-errors">
+                @Html.Localize("WorkShopApplicationErrors")
+            </p>
+        }
         <section class="workshop-application-section">
-            <h3 class="workshop-application-header">Особисті дані</h3>
+            <h3 class="workshop-application-header">@Html.Localize("WorkShopApplicationPersonalData")</h3>
+
+            @PersonalData(model => model.Name, Html.EditorFor)
+            @PersonalData(model => model.Surname, Html.EditorFor)
+            @PersonalData(model => model.BirthDate, @Html.TextBoxFor(model => model.BirthDate, @dateFormat, new { @class = "calendar" }))
+            @PersonalData(model => model.Country, Html.EditorFor)
+            @PersonalData(model => model.City, Html.EditorFor)
+            @PersonalData(model => model.Email, Html.EditorFor)
+            @PersonalData(model => model.Phone, Html.EditorFor)
+            @PersonalData(model => model.Profession, Html.EditorFor)
+            @PersonalData(model => model.EnglishLevel, Html.EnumDropDownListFor)
+            @PersonalData(model => model.OrganizationName, Html.EditorFor)
+            @PersonalData(model => model.LegalStatus, Html.EnumDropDownListFor)
+            @PersonalData(model => model.OrganizationInfo, Html.EditorFor)
+            @PersonalData(model => model.ParticipantsNumber, Html.EditorFor)
+        </section>
+
+        <section class="workshop-application-section">
+            <h3 class="workshop-application-header">@Html.Localize("WorkShopApplicationMotivation")</h3>
+
+            @MotivationData(model => model.Motivation1, Html.EditorFor)
+            @MotivationData(model => model.Motivation2, Html.EditorFor)
+            @MotivationData(model => model.Motivation3, Html.EditorFor)
+            @MotivationData(model => model.Motivation4, Html.EditorFor)
+            @MotivationData(model => model.Motivation5, Html.EditorFor)
+            @MotivationData(model => model.Motivation6, Html.EditorFor)
+        </section>
+
+        <section class="workshop-application-section">
             <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.Name)
+                <div class="1u">
+                    @Html.EditorFor(model => model.ProcessData)
                 </div>
-                <div class="9u">
-                    @Html.EditorFor(model => model.Name)
-                    @Html.ValidationMessageFor(model => model.Name)
-                </div>
-            </div>
-            <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.Surname)
-                </div>
-                <div class="9u">
-                    @Html.EditorFor(model => model.Surname)
-                    @Html.ValidationMessageFor(model => model.Surname)
-                </div>
-            </div>
-            <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.BirthDate)
-                </div>
-                <div class="9u">
-                    @Html.TextBoxFor(model => model.BirthDate, @dateFormat, new { @class = "calendar" })
-                    @Html.ValidationMessageFor(model => model.BirthDate)
-                </div>
-            </div>
-            <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.Email)
-                </div>
-                <div class="9u">
-                    @Html.EditorFor(model => model.Email)
-                    @Html.ValidationMessageFor(model => model.Email)
-                </div>
-            </div>
-            <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.Phone)
-                </div>
-                <div class="9u">
-                    @Html.EditorFor(model => model.Phone)
-                    @Html.ValidationMessageFor(model => model.Phone)
-                </div>
-            </div>
-            <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.Profession)
-                </div>
-                <div class="9u">
-                    @Html.EditorFor(model => model.Profession)
-                    @Html.ValidationMessageFor(model => model.Profession)
-                </div>
-            </div>
-            <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.EnglishLevel)
-                </div>
-                <div class="9u">
-                    @Html.EnumDropDownListFor(model => model.EnglishLevel)
-                    @Html.ValidationMessageFor(model => model.EnglishLevel)
-                </div>
-            </div>
-            <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.OrganizationName)
-                </div>
-                <div class="9u">
-                    @Html.EditorFor(model => model.OrganizationName)
-                    @Html.ValidationMessageFor(model => model.OrganizationName)
-                </div>
-            </div>
-            <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.LegalStatus)
-                </div>
-                <div class="9u">
-                    @Html.EnumDropDownListFor(model => model.LegalStatus)
-                    @Html.ValidationMessageFor(model => model.LegalStatus)
-                </div>
-            </div>
-            <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.OrganizationInfo)
-                </div>
-                <div class="9u">
-                    @Html.EditorFor(model => model.OrganizationInfo)
-                    @Html.ValidationMessageFor(model => model.OrganizationInfo)
-                </div>
-            </div>
-            <div class="row">
-                <div class="3u">
-                    @Html.LabelFor(model => model.ParticipantsNumber)
-                </div>
-                <div class="9u">
-                    @Html.EditorFor(model => model.ParticipantsNumber)
-                    @Html.ValidationMessageFor(model => model.ParticipantsNumber)
+                <div class="11u noPadding">
+                    @Html.LabelFor(model => model.ProcessData)
+                    @Html.ValidationMessageFor(model => model.ProcessData)
                 </div>
             </div>
         </section>
 
-        <section class="workshop-application-section">
-            <h3 class="workshop-application-header">Мотивація</h3>
-            <div class="row">
-                <div class="4u">
-                    @Html.LabelFor(model => model.Motivation1)
-                </div>
-                <div class="8u">
-                    @Html.EditorFor(model => model.Motivation1)
-                    @Html.ValidationMessageFor(model => model.Motivation1)
-                </div>
-            </div>
-            <div class="row">
-                <div class="4u">
-                    @Html.LabelFor(model => model.Motivation2)
-                </div>
-                <div class="8u">
-                    @Html.EditorFor(model => model.Motivation2)
-                    @Html.ValidationMessageFor(model => model.Motivation2)
-                </div>
-            </div>
-            <div class="row">
-                <div class="4u">
-                    @Html.LabelFor(model => model.Motivation3)
-                </div>
-                <div class="8u">
-                    @Html.EditorFor(model => model.Motivation3)
-                    @Html.ValidationMessageFor(model => model.Motivation3)
-                </div>
-            </div>
-            <div class="row">
-                <div class="4u">
-                    @Html.LabelFor(model => model.Motivation4)
-                </div>
-                <div class="8u">
-                    @Html.EditorFor(model => model.Motivation4)
-                    @Html.ValidationMessageFor(model => model.Motivation4)
-                </div>
-            </div>
-            <div class="row">
-                <div class="4u">
-                    @Html.LabelFor(model => model.Motivation5)
-                </div>
-                <div class="8u">
-                    @Html.EditorFor(model => model.Motivation5)
-                    @Html.ValidationMessageFor(model => model.Motivation5)
-                </div>
-            </div>
-            <div class="row">
-                <div class="4u">
-                    @Html.LabelFor(model => model.Motivation6)
-                </div>
-                <div class="8u">
-                    @Html.EditorFor(model => model.Motivation6)
-                    @Html.ValidationMessageFor(model => model.Motivation6)
-                </div>
-            </div>
-        </section>
-
-        <a class="button" href="#" onclick="$(this).closest('form').submit()">Надіслати</a>
+        <a class="button" href="#" onclick="$(this).closest('form').submit()">@Html.Localize("WorkShopApplicationSubmit")</a>
 
         <script type="text/javascript">
             $(document).ready(function () {
                 $(".calendar").datepicker({
                     dateFormat: "dd.mm.yy",
+                    changeYear: true,
+                    changeMonth: true,
+                    yearRange: "-75:-5",
                 });
             });
         </script>

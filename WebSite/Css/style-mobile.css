@@ -372,7 +372,9 @@ ul.contact {
 /* Workshop Application                                                          */
 /*********************************************************************************/
 
-.workshop-application-section input {
+.workshop-application-section input[type=text],
+.workshop-application-section input[type=email],
+.workshop-application-section input[type=tel] {
     width: 245px;
 }
 

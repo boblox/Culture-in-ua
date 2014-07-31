@@ -120,6 +120,12 @@
   <data name="ApplicationModelBirthDate" xml:space="preserve">
     <value>Birth date</value>
   </data>
+  <data name="ApplicationModelCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="ApplicationModelCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
   <data name="ApplicationModelEmail" xml:space="preserve">
     <value>Email</value>
   </data>
@@ -174,6 +180,12 @@
   <data name="ApplicationModelRequiredField" xml:space="preserve">
     <value>*</value>
   </data>
+  <data name="ApplicationModelSurname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="DateTimeInvalid" xml:space="preserve">
+    <value>{0} is an invalid date format</value>
+  </data>
   <data name="EnglishLevel_Advanced" xml:space="preserve">
     <value>Advanced</value>
   </data>
@@ -197,5 +209,20 @@
   </data>
   <data name="LegalStatus_PublicOrganization" xml:space="preserve">
     <value>Public organization</value>
+  </data>
+  <data name="WorkShopApplicationErrors" xml:space="preserve">
+    <value>Please correct the fields marked in red</value>
+  </data>
+  <data name="WorkShopApplicationMotivation" xml:space="preserve">
+    <value>Motivation</value>
+  </data>
+  <data name="WorkShopApplicationPersonalData" xml:space="preserve">
+    <value>Personal data</value>
+  </data>
+  <data name="WorkShopApplicationReceived" xml:space="preserve">
+    <value>Your application is received. Thank you!</value>
+  </data>
+  <data name="WorkShopApplicationSubmit" xml:space="preserve">
+    <value>Submit</value>
   </data>
 </root>

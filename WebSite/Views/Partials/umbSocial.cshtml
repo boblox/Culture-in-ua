@@ -9,9 +9,9 @@
 
 <!-- Contact -->
 <section>
-    <h2 class="major"><span>@Umbraco.GetDictionaryValue("WeInSocialNetworks")</span></h2>
+    @*<h2 class="major"><span>@Umbraco.GetDictionaryValue("WeInSocialNetworks")</span></h2>*@
     <ul class="contact">
-        @RenderLinkIfNotEmpty(homePage.FacebookLink, "facebook", "Facebook")
+        @RenderLinkIfNotEmpty(homePage.FacebookLink, "facebook", "Facebook", @Umbraco.GetDictionaryValue("WeInSocialNetworks"))
         @*@RenderLinkIfNotEmpty(homePage.TwitterLink, "twitter", "Twitter")
         @RenderLinkIfNotEmpty(homePage.RssLink, "rss", "RSS")
         @RenderLinkIfNotEmpty(homePage.DribbbleLink, "dribbble", "Dribbble")
@@ -21,7 +21,7 @@
 </section>
 <!-- /Contact -->
 
-@helper RenderLinkIfNotEmpty(dynamic link, string cssClass, string linkName)
+@helper RenderLinkIfNotEmpty(dynamic link, string cssClass, string linkName, string title)
 {
     // A helper function is handy when you have to do the same thing over and over again
     // So now we only have to write the "if" check and list item once, and we only need
@@ -29,6 +29,6 @@
     
     if (string.IsNullOrEmpty(link) == false)
     {
-        <li><a href="@link" class="@cssClass">@linkName</a></li>
+        <li><a href="@link" class="@cssClass" title="@title">@linkName</a></li>
     }
 }

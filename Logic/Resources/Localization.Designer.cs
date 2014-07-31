@@ -70,6 +70,24 @@ namespace Logic.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        public static string ApplicationModelCity {
+            get {
+                return ResourceManager.GetString("ApplicationModelCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string ApplicationModelCountry {
+            get {
+                return ResourceManager.GetString("ApplicationModelCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string ApplicationModelEmail {
@@ -232,6 +250,24 @@ namespace Logic.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Surname.
+        /// </summary>
+        public static string ApplicationModelSurname {
+            get {
+                return ResourceManager.GetString("ApplicationModelSurname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is an invalid date format.
+        /// </summary>
+        public static string DateTimeInvalid {
+            get {
+                return ResourceManager.GetString("DateTimeInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced.
         /// </summary>
         public static string EnglishLevel_Advanced {
@@ -300,6 +336,51 @@ namespace Logic.Resources {
         public static string LegalStatus_PublicOrganization {
             get {
                 return ResourceManager.GetString("LegalStatus_PublicOrganization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please correct the fields marked in red.
+        /// </summary>
+        public static string WorkShopApplicationErrors {
+            get {
+                return ResourceManager.GetString("WorkShopApplicationErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Motivation.
+        /// </summary>
+        public static string WorkShopApplicationMotivation {
+            get {
+                return ResourceManager.GetString("WorkShopApplicationMotivation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal data.
+        /// </summary>
+        public static string WorkShopApplicationPersonalData {
+            get {
+                return ResourceManager.GetString("WorkShopApplicationPersonalData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your application is received. Thank you!.
+        /// </summary>
+        public static string WorkShopApplicationReceived {
+            get {
+                return ResourceManager.GetString("WorkShopApplicationReceived", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        public static string WorkShopApplicationSubmit {
+            get {
+                return ResourceManager.GetString("WorkShopApplicationSubmit", resourceCulture);
             }
         }
     }
