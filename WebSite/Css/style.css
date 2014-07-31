@@ -72,7 +72,7 @@ form {
     form input,
     form select,
     form textarea {
-        -webkit-appearance: none;
+        /*-webkit-appearance: none;*/
     }
 
 br.clear {
