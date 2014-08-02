@@ -12,8 +12,6 @@
         var dict = new ViewDataDictionary(ViewData) { { "menuItem", homePage } };
         Html.RenderPartial("umbTopNavigationList", dict);
     }
-    <div class="languageSwitcher">
-        @Umbraco.RenderMacro("MLLanguageSwitcher", new { rendertype = "List" })
-    </div>
 </nav>
+
 <!-- /Nav -->

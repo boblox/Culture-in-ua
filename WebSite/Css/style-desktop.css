@@ -195,18 +195,14 @@ h4 {
 
 #header {
     height: 440px;
-    max-width: 1500px;
-    margin: 0 auto;
 }
 
 #header-logo {
-    display: block;
-    position: relative;
+
     top: 80px;
-    left: 15px;
+    left: -20px;
     height: 165px;
     width: 305px;
-    background-size: contain !important;
 }
 
 /*********************************************************************************/
@@ -227,23 +223,6 @@ h4 {
     font-weight: 700;
     text-transform: uppercase;
 }
-
-    /*Language switcher*/
-    #nav .languageSwitcher {
-        position: absolute;
-        right: 10px;
-        top: 0;
-        /*z-index: 1050;*/
-    }
-
-        #nav .languageSwitcher li {
-            display: inline-block;
-        }
-
-        #nav .languageSwitcher a {
-            border-bottom-left-radius: 6px;
-            border-bottom-right-radius: 6px;
-        }
 
     /*Dots over menu*/
     #nav:after {

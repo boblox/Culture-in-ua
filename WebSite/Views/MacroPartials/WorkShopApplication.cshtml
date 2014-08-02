@@ -1,7 +1,16 @@
 ﻿@using Logic.Models;
 @using Logic.Controllers;
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var getApplicationsStr = Request.QueryString["getApplications"];
+    bool getApplications;
+}
 
-@Html.Action("Index", "WorkShopApplication")
-
-@*@{Html.RenderPartial("umbWorkShopApplication", new WorkShopApplication());}*@
+@if (bool.TryParse(getApplicationsStr, out getApplications) && getApplications)
+{
+    @Html.ActionLink("Скачати заявки", "GetApplications", "WorkShopApplication")
+}
+else
+{
+    @Html.Action("Index", "WorkShopApplication")
+}

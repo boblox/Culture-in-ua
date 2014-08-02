@@ -133,37 +133,37 @@
     <value>Invalid email</value>
   </data>
   <data name="ApplicationModelEnglishLevel" xml:space="preserve">
-    <value>English level</value>
+    <value>Proficiency in English</value>
   </data>
   <data name="ApplicationModelLegalStatus" xml:space="preserve">
     <value>Legal status</value>
   </data>
   <data name="ApplicationModelMotivation1" xml:space="preserve">
-    <value>Напишіть про свій досвід у реалізації проектів, дотичних або безпосередньо пов’язаних з тематикою воршопу</value>
+    <value>Write about your experience in projects pertaining or directly related to the subject of the workshop</value>
   </data>
   <data name="ApplicationModelMotivation2" xml:space="preserve">
-    <value>Чи брали раніше участь у подібних воршопах. Якщо так то коли і де?</value>
+    <value>Have you previously participated in similar workshops. If so, when and where?</value>
   </data>
   <data name="ApplicationModelMotivation3" xml:space="preserve">
-    <value>Що спонукає Вас податися на участь у воркшопі</value>
+    <value>What motivates you to apply for participation in the workshop?</value>
   </data>
   <data name="ApplicationModelMotivation4" xml:space="preserve">
-    <value>Як плануєте використати отриманий досвід у воркшопі</value>
+    <value>How do you plan to use the experience gained in the workshop?</value>
   </data>
   <data name="ApplicationModelMotivation5" xml:space="preserve">
-    <value>Ваші очікування від воркшопу</value>
+    <value>What are you expectations from the workshop?</value>
   </data>
   <data name="ApplicationModelMotivation6" xml:space="preserve">
-    <value>Звідки дізналися про воркшоп?</value>
+    <value>Where did you find out about the workshop?</value>
   </data>
   <data name="ApplicationModelName" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="ApplicationModelOrganizationInfo" xml:space="preserve">
-    <value>Organization info</value>
+    <value>About the organization</value>
   </data>
   <data name="ApplicationModelOrganizationName" xml:space="preserve">
-    <value>Organization name</value>
+    <value>Organization</value>
   </data>
   <data name="ApplicationModelParticipantsNumber" xml:space="preserve">
     <value>Number of participants</value>
@@ -172,7 +172,7 @@
     <value>Phone</value>
   </data>
   <data name="ApplicationModelProcessData" xml:space="preserve">
-    <value>Consent to the processing of data</value>
+    <value>I agree to data processing</value>
   </data>
   <data name="ApplicationModelProfession" xml:space="preserve">
     <value>Profession</value>

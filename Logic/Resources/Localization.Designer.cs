@@ -106,7 +106,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to English level.
+        ///   Looks up a localized string similar to Proficiency in English.
         /// </summary>
         public static string ApplicationModelEnglishLevel {
             get {
@@ -124,7 +124,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Напишіть про свій досвід у реалізації проектів, дотичних або безпосередньо пов’язаних з тематикою воршопу.
+        ///   Looks up a localized string similar to Write about your experience in projects pertaining or directly related to the subject of the workshop.
         /// </summary>
         public static string ApplicationModelMotivation1 {
             get {
@@ -133,7 +133,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Чи брали раніше участь у подібних воршопах. Якщо так то коли і де?.
+        ///   Looks up a localized string similar to Have you previously participated in similar workshops. If so, when and where?.
         /// </summary>
         public static string ApplicationModelMotivation2 {
             get {
@@ -142,7 +142,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Що спонукає Вас податися на участь у воркшопі.
+        ///   Looks up a localized string similar to What motivates you to apply for participation in the workshop?.
         /// </summary>
         public static string ApplicationModelMotivation3 {
             get {
@@ -151,7 +151,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Як плануєте використати отриманий досвід у воркшопі.
+        ///   Looks up a localized string similar to How do you plan to use the experience gained in the workshop?.
         /// </summary>
         public static string ApplicationModelMotivation4 {
             get {
@@ -160,7 +160,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ваші очікування від воркшопу.
+        ///   Looks up a localized string similar to What are you expectations from the workshop?.
         /// </summary>
         public static string ApplicationModelMotivation5 {
             get {
@@ -169,7 +169,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Звідки дізналися про воркшоп?.
+        ///   Looks up a localized string similar to Where did you find out about the workshop?.
         /// </summary>
         public static string ApplicationModelMotivation6 {
             get {
@@ -187,7 +187,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Organization info.
+        ///   Looks up a localized string similar to About the organization.
         /// </summary>
         public static string ApplicationModelOrganizationInfo {
             get {
@@ -196,7 +196,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Organization name.
+        ///   Looks up a localized string similar to Organization.
         /// </summary>
         public static string ApplicationModelOrganizationName {
             get {
@@ -223,7 +223,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Consent to the processing of data.
+        ///   Looks up a localized string similar to I agree to data processing.
         /// </summary>
         public static string ApplicationModelProcessData {
             get {

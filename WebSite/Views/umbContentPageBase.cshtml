@@ -1,0 +1,35 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = "umbLayout.cshtml";
+}
+<div id="main-wrapper">
+    <div id="main" class="container">
+        <div class="row">
+            <div class="9u skel-cell-mainContent">
+                <div class="content content-left">
+                    <!-- Content -->
+                    <article class="is-page-content">
+                        @RenderSection("Body")
+                    </article>
+                    <!-- /Content -->
+                </div>
+            </div>
+            <div class="3u">
+                <div class="sidebar">
+                    <!-- Sidebar -->
+                    @RenderSection("Sidebar")
+                    <!-- /Sidebar -->
+                </div>
+            </div>
+        </div>
+        @if (IsSectionDefined("Footer"))
+        {
+            <div class="row">
+                <div class="9u">
+                    @RenderSection("Footer")
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<!-- /Main -->

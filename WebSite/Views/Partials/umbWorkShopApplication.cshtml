@@ -65,7 +65,7 @@
 }
 else
 {
-    using (Html.BeginUmbracoForm<WorkShopApplicationController>("SendApplication"))
+    using (Html.BeginUmbracoForm<WorkShopApplicationController>("Send"))
     {
         if (!ViewData.ModelState.IsValid)
         {
@@ -74,7 +74,9 @@ else
             </p>
         }
         <section class="workshop-application-section">
-            <h3 class="workshop-application-header">@Html.Localize("WorkShopApplicationPersonalData")</h3>
+            <h3>
+                <span>@Html.Localize("WorkShopApplicationPersonalData")</span>
+            </h3>
 
             @PersonalData(model => model.Name, Html.EditorFor)
             @PersonalData(model => model.Surname, Html.EditorFor)
@@ -92,7 +94,9 @@ else
         </section>
 
         <section class="workshop-application-section">
-            <h3 class="workshop-application-header">@Html.Localize("WorkShopApplicationMotivation")</h3>
+            <h3>
+                <span>@Html.Localize("WorkShopApplicationMotivation")</span>
+            </h3>
 
             @MotivationData(model => model.Motivation1, Html.EditorFor)
             @MotivationData(model => model.Motivation2, Html.EditorFor)

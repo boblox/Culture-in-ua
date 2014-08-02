@@ -163,7 +163,7 @@
     <value>Інформація про організацію чи ініціативну групу, її цілі та структуру</value>
   </data>
   <data name="ApplicationModelOrganizationName" xml:space="preserve">
-    <value>Назва організації/Ініціативи</value>
+    <value>Назва організації/ініціативи</value>
   </data>
   <data name="ApplicationModelParticipantsNumber" xml:space="preserve">
     <value>Кількість учасників</value>

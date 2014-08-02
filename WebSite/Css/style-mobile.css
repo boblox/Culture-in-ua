@@ -36,7 +36,7 @@ h3 {
 section,
 article {
     clear: both;
-    margin: 0 0 2.5em 0 !important;
+    margin: 0 0 1.5em 0 !important;
 }
 
 .byline {
@@ -161,6 +161,11 @@ ul.contact {
         margin: 0 0 3em 0;
     }
 
+    .is-page-content img {
+        max-width: 100%;
+        height: auto !important;
+    }
+
 /*********************************************************************************/
 /* Sidebar + Content                                                             */
 /*********************************************************************************/
@@ -168,7 +173,7 @@ ul.contact {
 .sidebar {
     border-top: solid 2px #e7eae8;
     padding-top: 5em;
-    margin-top: 5em;
+    margin-top: 1em;
     border-bottom: solid 2px #e7eae8;
     padding-bottom: 5em;
 }
@@ -212,12 +217,27 @@ ul.contact {
 
 #header {
     height: 200px;
+    background: none !important;
 }
 
-/*#header
-	{
-		display: none;
-	}*/
+#header-logo {
+    margin: 0 auto;
+    top: 55px;
+    height: 140px;
+    width: 255px;
+}
+
+/*********************************************************************************/
+/* Language switcher                                                             */
+/*********************************************************************************/
+.languageSwitcher {
+    z-index: 10001;
+}
+
+    .languageSwitcher li a {
+        background: #C1CAC5;
+        color: #fff;
+    }
 
 /*********************************************************************************/
 /* Nav                                                                           */
@@ -268,6 +288,10 @@ ul.contact {
 
     #footer > .row {
         padding: 1em 0 1em 0;
+    }
+
+    #footer section {
+        margin: 0 !important;
     }
 
 /*********************************************************************************/
@@ -385,5 +409,15 @@ ul.contact {
 .workshop-application-section select {
     width: 245px;
 }
+
+.workshop-application-section h3 {
+    text-align: left;
+    margin: 2.5em 0 0.75em 0;
+}
+
+    .workshop-application-section h3 span {
+        top: -0.8em;
+        padding: 0 1em 0 0;
+    }
 
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

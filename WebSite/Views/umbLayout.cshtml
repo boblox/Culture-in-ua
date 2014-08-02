@@ -38,6 +38,10 @@
 <body class="homepage">
     <!-- /Header -->
     @{ Html.RenderPartial("umbTopNavigation"); }
+    
+    <div class="languageSwitcher">
+        @Umbraco.RenderMacro("MLLanguageSwitcher", new { rendertype = "List" })
+    </div>
 
     @{ Html.RenderPartial("umbHeader"); }
     @RenderBody()
