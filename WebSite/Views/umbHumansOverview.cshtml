@@ -9,6 +9,32 @@
         : CurrentPage.Title;
 
     var humanInfoItems = CurrentPage.umbHumanInfos.OrderBy("publishDate desc, createDate desc");
+    const int itemsPerRow = 4;
+}
+
+@helper RenderRow(dynamic humanInfos)
+{
+    <div class="row">
+        @foreach (var item in humanInfos)
+        {
+            // If the editor has not explicitly provided the "Page title" property page
+            // then just show the name of the page otherwise show the provided title
+            var title = string.IsNullOrWhiteSpace(item.Title)
+                ? item.Name
+                : item.Title;
+
+            <div class="3u">
+                <section class="human-overview-section">
+                    @if (string.IsNullOrWhiteSpace(item.Image) == false)
+                    {
+                        <a href="@item.Url" class="image image-full"><img src="@item.Image" alt="" /></a>
+                    }
+                    <h3><a href="@item.Url">@title</a></h3>
+                    @item.Occupation
+                </section>
+            </div>
+        }
+    </div>
 }
 
 <!-- Main -->
@@ -21,28 +47,12 @@
                 <header>
                     <h2>@pageTitle</h2>
                 </header>
-
-                <div class="row">
-                    @foreach (var item in humanInfoItems)
-                    {
-                        // If the editor has not explicitly provided the "Page title" property page
-                        // then just show the name of the page otherwise show the provided title
-                        var title = string.IsNullOrWhiteSpace(item.Title)
-                            ? item.Name
-                            : item.Title;
-
-                        <div class="3u">
-                            <section class="human-overview-section">
-                                @if (string.IsNullOrWhiteSpace(item.Image) == false)
-                                {
-                                    <a href="@item.Url" class="image image-full"><img src="@item.Image" alt="" /></a>
-                                }
-                                <h3><a href="@item.Url">@title</a></h3>
-                                @item.Occupation
-                            </section>
-                        </div>
-                    }
-                </div>
+                
+                <!--Render each itemsPerRow items in row-->
+                @for (int i = 0; i < (humanInfoItems.Count() + itemsPerRow - 1) / itemsPerRow; i++)
+                {
+                    @RenderRow(humanInfoItems.Skip(i * itemsPerRow).Take(itemsPerRow))
+                }
             </article>
             <!-- /Content -->
 
