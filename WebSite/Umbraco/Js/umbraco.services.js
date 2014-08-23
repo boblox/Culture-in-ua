@@ -5221,12 +5221,13 @@ function tinyMceService(dialogService, $log, imageHelper, $http, $timeout, macro
 
                                     var newSize = imageHelper.scaleToMaxSize(500, size.w, size.h);
 
-                                    var s = "width: " + newSize.width + "px; height:" + newSize.height + "px;";
-                                    editor.dom.setAttrib(imgElm, 'style', s);
+                                    //Quick fix for disabling pre-defined size for media-picked images
+                                    //var s = "width: " + newSize.width + "px; height:" + newSize.height + "px;";
+                                    //editor.dom.setAttrib(imgElm, 'style', s);
                                     editor.dom.setAttrib(imgElm, 'id', null);
 
-                                    if(img.url){
-                                        var src = img.url + "?width=" + newSize.width + "&height=" + newSize.height;
+                                    if(img.url) {
+                                        var src = img.url;// + "?width=" + newSize.width + "&height=" + newSize.height;
                                         editor.dom.setAttrib(imgElm, 'data-mce-src', src);
                                     }
                                  
