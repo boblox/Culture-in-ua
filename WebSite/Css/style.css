@@ -467,8 +467,12 @@ ul.meta {
 .is-page-content {
 }
 
-    .is-page-content img {
-        max-width: 100%;
+    .is-page-content ol li {
+        list-style: decimal;
+    }
+
+    .is-page-content ul li {
+        list-style: disc;
     }
 
 /*********************************************************************************/

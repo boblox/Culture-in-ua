@@ -134,6 +134,10 @@ h4 {
 .is-page-content {
 }
 
+    .is-page-content img {
+        max-width: 100%;
+    }
+
     .is-page-content header {
         margin: 0 0 2.5em 0;
     }
@@ -198,7 +202,6 @@ h4 {
 }
 
 #header-logo {
-
     top: 80px;
     left: -20px;
     height: 165px;
