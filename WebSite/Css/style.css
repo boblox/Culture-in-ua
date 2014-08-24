@@ -468,11 +468,11 @@ ul.meta {
 }
 
     .is-page-content ol li {
-        list-style: decimal;
+        list-style: decimal inside;
     }
 
     .is-page-content ul li {
-        list-style: disc;
+        list-style: disc inside;
     }
 
 /*********************************************************************************/
