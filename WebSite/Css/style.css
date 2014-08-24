@@ -469,6 +469,7 @@ ul.meta {
 
     .is-page-content ol {
         padding-left: 30px;
+        margin-bottom: 1em;
     }
 
         .is-page-content ol li {
@@ -477,6 +478,7 @@ ul.meta {
 
     .is-page-content ul {
         padding-left: 30px;
+        margin-bottom: 1em;
     }
 
         .is-page-content ul li {
