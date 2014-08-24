@@ -467,13 +467,21 @@ ul.meta {
 .is-page-content {
 }
 
-    .is-page-content ol li {
-        list-style: decimal inside;
+    .is-page-content ol {
+        padding-left: 30px;
     }
 
-    .is-page-content ul li {
-        list-style: disc inside;
+        .is-page-content ol li {
+            list-style: decimal inside;
+        }
+
+    .is-page-content ul {
+        padding-left: 30px;
     }
+
+        .is-page-content ul li {
+            list-style: disc inside;
+        }
 
 /*********************************************************************************/
 /* Sidebar + Content                                                             */
