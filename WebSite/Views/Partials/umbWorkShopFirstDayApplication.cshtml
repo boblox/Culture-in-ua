@@ -41,12 +41,16 @@
 
 @if (ViewData["Applications count limit exceeded"] != null)
 {
-    @Html.Localize("WorkShopFirstDayApplicationLimitExceeded")
+    <p>
+        <strong>@Html.Localize("WorkShopFirstDayApplicationLimitExceeded")</strong>
+    </p>
 }
 else if (TempData["Application received"] != null)
 {
     var number = TempData["Applicant number"];
-    @Html.Localize("WorkShopFirstDayApplicationReceived", number)
+    <p>
+        <strong>@Html.Localize("WorkShopFirstDayApplicationReceived", number)</strong>
+    </p>
 }
 else
 {

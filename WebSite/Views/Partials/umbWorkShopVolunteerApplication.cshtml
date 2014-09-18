@@ -58,7 +58,9 @@
 
 @if (TempData["Application received"] != null)
 {
-    @Html.Localize("WorkShopApplicationReceived")
+    <p>
+        <strong>@Html.Localize("WorkShopApplicationReceived")</strong>
+    </p>
 }
 else
 {
