@@ -30,11 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\Libs\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\Libs\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -42,6 +44,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,14 +60,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\WorkShopVolunteerApplicationController.cs" />
+    <Compile Include="Controllers\WorkShopFirstDayApplicationController.cs" />
     <Compile Include="Controllers\WorkShopApplicationController.cs" />
     <Compile Include="DAL\DataContext.cs" />
     <Compile Include="Enums\LegalStatus.cs" />
     <Compile Include="Enums\EnglishLevel.cs" />
+    <Compile Include="Helpers\DbCsvReader.cs" />
     <Compile Include="Helpers\HtmlHelperExtensions.cs" />
     <Compile Include="Helpers\MyDateTimeModelBinder.cs" />
     <Compile Include="Helpers\RequiredTrueAttribute.cs" />
+    <Compile Include="Migrations\201407310158317_InitialCreate.cs" />
+    <Compile Include="Migrations\201407310158317_InitialCreate.Designer.cs">
+      <DependentUpon>201407310158317_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409162147017_AddWorkShopFirstDayApplications.cs" />
+    <Compile Include="Migrations\201409162147017_AddWorkShopFirstDayApplications.Designer.cs">
+      <DependentUpon>201409162147017_AddWorkShopFirstDayApplications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409170052514_AddWorkShopVolunteerApplications.cs" />
+    <Compile Include="Migrations\201409170052514_AddWorkShopVolunteerApplications.Designer.cs">
+      <DependentUpon>201409170052514_AddWorkShopVolunteerApplications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\WorkShopVolunteerApplication.cs" />
+    <Compile Include="Models\WorkShopFirstDayApplication.cs" />
     <Compile Include="Models\WorkShopApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Localization.uk-ua.Designer.cs">
@@ -79,6 +100,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201407310158317_InitialCreate.resx">
+      <DependentUpon>201407310158317_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409162147017_AddWorkShopFirstDayApplications.resx">
+      <DependentUpon>201409162147017_AddWorkShopFirstDayApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409170052514_AddWorkShopVolunteerApplications.resx">
+      <DependentUpon>201409170052514_AddWorkShopVolunteerApplications.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Localization.uk-ua.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.uk-ua.Designer.cs</LastGenOutput>
@@ -91,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

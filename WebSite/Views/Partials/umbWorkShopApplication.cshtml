@@ -1,8 +1,5 @@
 ﻿@using System.Linq.Expressions
-@using Logic.Helpers
-@using Logic.Models
-@using Umbraco.Web;
-@using Logic.Controllers;
+@using ApplicationType = Logic.Models.WorkShopApplication;
 
 @*TODO: to be honest this view should be in Logic project*@
 
@@ -17,17 +14,17 @@
 {
     private delegate MvcHtmlString EditorDelegate<TModel, TValue>(Expression<Func<TModel, TValue>> expression);
 
-    HelperResult PersonalData<T>(Expression<Func<WorkShopApplication, T>> expression, EditorDelegate<WorkShopApplication, T> editor)
+    HelperResult PersonalData<TValue>(Expression<Func<ApplicationType, TValue>> expression, EditorDelegate<ApplicationType, TValue> editor)
     {
         return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
     }
 
-    HelperResult MotivationData<T>(Expression<Func<WorkShopApplication, T>> expression, EditorDelegate<WorkShopApplication, T> editor)
+    HelperResult MotivationData<T>(Expression<Func<ApplicationType, T>> expression, EditorDelegate<ApplicationType, T> editor)
     {
         return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
     }
 
-    HelperResult PersonalData<T>(Expression<Func<WorkShopApplication, T>> expression, MvcHtmlString editorString)
+    HelperResult PersonalData<T>(Expression<Func<ApplicationType, T>> expression, MvcHtmlString editorString)
     {
         return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editorString);
     }

@@ -172,7 +172,7 @@
     <value>Телефон</value>
   </data>
   <data name="ApplicationModelProcessData" xml:space="preserve">
-    <value>Згода на обробку даних</value>
+    <value>Я погоджуюсь на обробку даних</value>
   </data>
   <data name="ApplicationModelProfession" xml:space="preserve">
     <value>Професія/вид діяльності</value>
@@ -180,8 +180,20 @@
   <data name="ApplicationModelRequiredField" xml:space="preserve">
     <value>*</value>
   </data>
+  <data name="ApplicationModelSocialNetworkUrl" xml:space="preserve">
+    <value>Адреса вашої сторінки у vk або facebook</value>
+  </data>
   <data name="ApplicationModelSurname" xml:space="preserve">
     <value>Прізвище</value>
+  </data>
+  <data name="ApplicationModelUrlInvalid" xml:space="preserve">
+    <value>Неправильний формат посилання</value>
+  </data>
+  <data name="ApplicationModelVolunteeringMotivation" xml:space="preserve">
+    <value>Чому Вам цікаво стати волонтером(-кою) у організації воркшопу?</value>
+  </data>
+  <data name="ApplicationModelWorkTimeRange" xml:space="preserve">
+    <value>Дні та години, у які ви можете бути присутні</value>
   </data>
   <data name="DateTimeInvalid" xml:space="preserve">
     <value>{0} є неприпустимим форматом дати</value>
@@ -205,9 +217,21 @@
     <value>Особисті дані</value>
   </data>
   <data name="WorkShopApplicationReceived" xml:space="preserve">
-    <value>Ваша заявка успішно прийнята. Дякуємо!</value>
+    <value>Ваша заявка успішно прийнята. Дякуємо за реєстрацію!</value>
   </data>
   <data name="WorkShopApplicationSubmit" xml:space="preserve">
     <value>Надіслати</value>
+  </data>
+  <data name="WorkShopFirstDayApplicationEmailBody" xml:space="preserve">
+    <value>Ваша заявка на перший день воркшопу “Регенерація індустріальних споруд в Україні”, яка проходитиме на Фабриці повидла 24 вересня з 14:00 до 20:00, успішно прийнята. Ваш номер - {0}. Детальніше про програму за &lt;a href="http://culture.in.ua/projects/regeneration-of-industrial-buildings/program/"&gt;посиланням&lt;/a&gt;. Дякуємо за реєстрацію!</value>
+  </data>
+  <data name="WorkShopFirstDayApplicationEmailSubject" xml:space="preserve">
+    <value>Реєстрація на перший день воркшопу</value>
+  </data>
+  <data name="WorkShopFirstDayApplicationLimitExceeded" xml:space="preserve">
+    <value>Нажаль кількість місць на дану подію обмежена. Ми не можемо вас зареєструвати.</value>
+  </data>
+  <data name="WorkShopFirstDayApplicationReceived" xml:space="preserve">
+    <value>Дякуємо за реєстрацію! Ваша заявка на перший день воркшопу “Регенерація індустріальних споруд в Україні” успішно прийнята. Ми надіслали вам листа з подальшою інформацією. Ваш номер - {0}. Будь ласка, запам'ятайте його, вам потрібно буде його знати при вході на подію </value>
   </data>
 </root>

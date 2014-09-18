@@ -133,7 +133,7 @@
     <value>Invalid email</value>
   </data>
   <data name="ApplicationModelEnglishLevel" xml:space="preserve">
-    <value>Proficiency in English</value>
+    <value>Proficiency in english</value>
   </data>
   <data name="ApplicationModelLegalStatus" xml:space="preserve">
     <value>Legal status</value>
@@ -180,8 +180,20 @@
   <data name="ApplicationModelRequiredField" xml:space="preserve">
     <value>*</value>
   </data>
+  <data name="ApplicationModelSocialNetworkUrl" xml:space="preserve">
+    <value>Vk or facebook url</value>
+  </data>
   <data name="ApplicationModelSurname" xml:space="preserve">
     <value>Surname</value>
+  </data>
+  <data name="ApplicationModelUrlInvalid" xml:space="preserve">
+    <value>Invalid url</value>
+  </data>
+  <data name="ApplicationModelVolunteeringMotivation" xml:space="preserve">
+    <value>Why are you interested in becoming a volunteer of the workshop?</value>
+  </data>
+  <data name="ApplicationModelWorkTimeRange" xml:space="preserve">
+    <value>Days and times in which you can be present</value>
   </data>
   <data name="DateTimeInvalid" xml:space="preserve">
     <value>{0} is an invalid date format</value>
@@ -220,9 +232,21 @@
     <value>Personal data</value>
   </data>
   <data name="WorkShopApplicationReceived" xml:space="preserve">
-    <value>Your application is received. Thank you!</value>
+    <value>Your application is received. Thank you for registration!</value>
   </data>
   <data name="WorkShopApplicationSubmit" xml:space="preserve">
     <value>Submit</value>
+  </data>
+  <data name="WorkShopFirstDayApplicationEmailBody" xml:space="preserve">
+    <value>Your application for the first day of workshop "Regeneration of industrial buildings in Ukraine", which will be held at Jam Factory September 24 from 14:00 to 20:00, successfully accepted. Your number - {0}. Read more about the program &lt;a href="http://culture.in.ua/en/projects/regeneration-of-industrial-buildings/program/"&gt;here&lt;/a&gt;. Thank you for registration!</value>
+  </data>
+  <data name="WorkShopFirstDayApplicationEmailSubject" xml:space="preserve">
+    <value>Registration for the first day of workshop</value>
+  </data>
+  <data name="WorkShopFirstDayApplicationLimitExceeded" xml:space="preserve">
+    <value>Unfortunately number of places are limited. We can not register you.</value>
+  </data>
+  <data name="WorkShopFirstDayApplicationReceived" xml:space="preserve">
+    <value>Thank you for the registration! Your application for the first day of workshop "Regeneration of industrial buildings in Ukraine" is received and we sent you the email with further info. Your number -  {0}. Please remember it, you will need to know it at the entrance to the event</value>
   </data>
 </root>

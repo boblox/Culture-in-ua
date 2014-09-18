@@ -19,6 +19,10 @@ h2, h3, h4, h5, h6 {
     margin: 0 0 0.5em 0;
 }
 
+h2 {
+    font-size: 1.8em;
+}
+
     h2.major {
         text-align: left;
         margin: 0.775em 0 0.75em 0;
@@ -30,7 +34,7 @@ h2, h3, h4, h5, h6 {
         }
 
 h3 {
-    font-size: 1.25em;
+    font-size: 1.35em;
 }
 
 section,
@@ -111,6 +115,13 @@ ul.contact {
         display: none;
     }
 
+.is-feature {
+}
+
+    .is-feature .byline {
+        font-size: 1.2em;
+    }
+
 .is-post-summary {
     margin: 0 !important;
 }
@@ -145,16 +156,18 @@ ul.contact {
 
     .is-page-content h2 {
         font-size: 2.25em;
-        line-height: 1.25em;
+        line-height: 1.35em;
         margin: 0 0 0.5em 0;
     }
 
     .is-page-content .byline {
         margin: 0 0 0.75em 0;
+        font-size: 1.2em;
     }
 
     .is-page-content ul.meta {
-        margin: 0 0 0.5em 0;
+        padding-left: 0;
+        margin: 0 0 1em 0;
     }
 
     .is-page-content header {
@@ -171,11 +184,11 @@ ul.contact {
 /*********************************************************************************/
 
 .sidebar {
-    border-top: solid 2px #e7eae8;
-    padding-top: 5em;
-    margin-top: 1em;
-    border-bottom: solid 2px #e7eae8;
-    padding-bottom: 5em;
+    /*border-top: solid 2px #e7eae8;*/
+    /*padding-top: 4em;*/
+    /*margin-top: 1em;
+    border-bottom: solid 2px #e7eae8;*/
+    /*padding-bottom: 4em;*/
 }
 
     .sidebar > section {
@@ -398,7 +411,8 @@ ul.contact {
 
 .workshop-application-section input[type=text],
 .workshop-application-section input[type=email],
-.workshop-application-section input[type=tel] {
+.workshop-application-section input[type=tel],
+.workshop-application-section input[type=url] {
     width: 245px;
 }
 

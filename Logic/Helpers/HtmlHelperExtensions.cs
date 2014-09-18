@@ -2,9 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using Logic.Resources;
+using Umbraco.Web;
 
 namespace Logic.Helpers
 {
@@ -45,9 +47,17 @@ namespace Logic.Helpers
             return result ?? enumValue.ToString();
         }
 
-        public static MvcHtmlString Localize(this HtmlHelper html, string key)
+        public static MvcHtmlString GetInnerText(this HtmlHelper html, IHtmlString htmlText, int length = 0)
         {
-            return new MvcHtmlString(Localization.ResourceManager.GetString(key));
+            var helper = new UmbracoHelper();
+            var text = helper.StripHtml(htmlText);
+            return new MvcHtmlString(length == 0 ? text.ToString() : helper.Truncate(text, length).ToString());
+        }
+
+        public static MvcHtmlString Localize(this HtmlHelper html, string key, params object[] args)
+        {
+            var format = Localization.ResourceManager.GetString(key) ?? string.Empty;
+            return new MvcHtmlString(string.Format(format, args));
         }
     }
 }

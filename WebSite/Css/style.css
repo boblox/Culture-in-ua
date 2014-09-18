@@ -44,7 +44,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7 a {
 
 h2.major {
     position: relative;
-    border-top: solid 5px #e7eae8;
+    border-top: solid 0.3em #e7eae8;
 }
 
     h2.major span {
@@ -155,7 +155,7 @@ input, textarea, select {
 .image-full {
     display: block;
     width: 100%;
-    margin: 0 0 2em 0;
+    margin: 0 0 1.4em 0;
 }
 
 .image-left {
@@ -211,7 +211,7 @@ ul.style1 {
 }
 
 ul.style2 {
-    margin-bottom: 45px;
+    margin-bottom: 3em;
 }
 
     ul.style2 > li {
@@ -468,7 +468,7 @@ ul.meta {
 }
 
     .is-page-content ol {
-        padding-left: 30px;
+        padding-left: 2em;
         margin-bottom: 1em;
     }
 
@@ -477,7 +477,7 @@ ul.meta {
         }
 
     .is-page-content ul {
-        padding-left: 30px;
+        padding-left: 2em;
         margin-bottom: 1em;
     }
 
@@ -574,7 +574,7 @@ ul.meta {
 /*********************************************************************************/
 .languageSwitcher {
     position: fixed;
-    right: 10px;
+    right: 0.8em;
     top: 0;
     z-index: 1002;
     font-family: 'Open Sans Condensed',sans-serif;
@@ -594,7 +594,7 @@ ul.meta {
             color: #6b7770;
             display: block;
             outline: 0 none;
-            padding: 3px 1.5em 0.25em;
+            padding: 0.25em 1.5em;
             text-decoration: none;
         }
 
@@ -731,16 +731,17 @@ ul.meta {
 
 .workshop-application-section {
     /*margin-bottom: 50px;*/
-    margin: 45px 0;
+    margin: 3em 0;
 }
 
     .workshop-application-section .row {
-        margin-left: -15px;
+        margin-left: -1em;
     }
 
     .workshop-application-section input[type=text],
     .workshop-application-section input[type=email],
-    .workshop-application-section input[type=tel] {
+    .workshop-application-section input[type=tel],
+    .workshop-application-section input[type=url] {
         /*width: 25%;*/
         width: 353px;
     }
@@ -763,7 +764,7 @@ ul.meta {
 
     .workshop-application-section h3 {
         position: relative;
-        border-top: solid 5px #e7eae8;
+        border-top: solid 0.3em #e7eae8;
         text-align: left;
         margin: 1em 1em 1em 0;
     }
@@ -781,7 +782,7 @@ ul.meta {
     color: red;
     background-color: #c1cac5;
     border-radius: 5px;
-    padding: 10px;
+    padding: 0.7em;
 }
 
 /*********************************************************************************/

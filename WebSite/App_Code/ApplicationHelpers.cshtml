@@ -1,0 +1,53 @@
+﻿@*@using System.Linq.Expressions
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using Logic.Models
+
+@functions
+{
+    private delegate MvcHtmlString EditorDelegate<TModel, TValue>(Expression<Func<TModel, TValue>> expression);
+
+    HelperResult PersonalData<TModel, TValue>(Expression<Func<TModel, TValue>> expression, EditorDelegate<TModel, TValue> editor)
+    {
+        var expressionFunc = expression.Compile();Model
+        //var helper = new HtmlHelper<TModel>(ViewContext, ViewData);
+        //helper.LabelFor<TModel, TValue>(expression);Html.Label()
+        return PersonalDataHelper(Html.Label(expressionFunc()), Html.ValidationMessageFor(expression), editor(expression));
+    }
+
+    HelperResult MotivationData<T>(Expression<Func<WorkShopApplication, T>> expression, EditorDelegate<WorkShopApplication, T> editor)
+    {
+        return MotivationDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
+    }
+
+    HelperResult PersonalData<T>(Expression<Func<WorkShopApplication, T>> expression, MvcHtmlString editorString)
+    {
+        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editorString);
+    }
+}
+
+@helper PersonalDataHelper(MvcHtmlString labelString, MvcHtmlString validationString, MvcHtmlString editorString)
+{
+    <div class="row">
+        <div class="3u">
+            @labelString
+        </div>
+        <div class="9u">
+            @editorString
+            @validationString
+        </div>
+    </div>
+}
+
+@helper MotivationDataHelper(MvcHtmlString labelString, MvcHtmlString validationString, MvcHtmlString editorString)
+{
+    <div class="row">
+        <div class="4u">
+            @labelString
+        </div>
+        <div class="8u">
+            @editorString
+            @validationString
+        </div>
+    </div>
+}*@

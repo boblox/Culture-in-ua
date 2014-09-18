@@ -1,0 +1,122 @@
+﻿@using System.Linq.Expressions
+@using ApplicationType = Logic.Models.WorkShopVolunteerApplication;
+
+@*TODO: to be honest this view should be in Logic project*@
+
+@*@Html.Action("Index", "WorkShopApplication")*@
+
+@model WorkShopVolunteerApplication
+@{
+    const string dateFormat = "{0:dd.MM.yyyy}";
+}
+
+@functions
+{
+    private delegate MvcHtmlString EditorDelegate<TModel, TValue>(Expression<Func<TModel, TValue>> expression);
+
+    HelperResult PersonalData<T>(Expression<Func<ApplicationType, T>> expression, EditorDelegate<ApplicationType, T> editor)
+    {
+        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
+    }
+
+    HelperResult MotivationData<T>(Expression<Func<ApplicationType, T>> expression, EditorDelegate<ApplicationType, T> editor)
+    {
+        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
+    }
+
+    HelperResult PersonalData<T>(Expression<Func<ApplicationType, T>> expression, MvcHtmlString editorString)
+    {
+        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editorString);
+    }
+}
+
+@helper PersonalDataHelper(MvcHtmlString labelString, MvcHtmlString validationString, MvcHtmlString editorString)
+{
+    <div class="row">
+        <div class="3u">
+            @labelString
+        </div>
+        <div class="9u">
+            @editorString
+            @validationString
+        </div>
+    </div>
+}
+
+@helper MotivationDataHelper(MvcHtmlString labelString, MvcHtmlString validationString, MvcHtmlString editorString)
+{
+    <div class="row">
+        <div class="4u">
+            @labelString
+        </div>
+        <div class="8u">
+            @editorString
+            @validationString
+        </div>
+    </div>
+}
+
+@if (TempData["Application received"] != null)
+{
+    @Html.Localize("WorkShopApplicationReceived")
+}
+else
+{
+    using (Html.BeginUmbracoForm<WorkShopVolunteerApplicationController>("Send"))
+    {
+        if (!ViewData.ModelState.IsValid)
+        {
+            <p class="workshop-application-errors">
+                @Html.Localize("WorkShopApplicationErrors")
+            </p>
+        }
+        <section class="workshop-application-section">
+            <h3>
+                <span>@Html.Localize("WorkShopApplicationPersonalData")</span>
+            </h3>
+
+            @PersonalData(model => model.Name, Html.EditorFor)
+            @PersonalData(model => model.Surname, Html.EditorFor)
+            @PersonalData(model => model.BirthDate, @Html.TextBoxFor(model => model.BirthDate, @dateFormat, new { @class = "calendar" }))
+            @PersonalData(model => model.Email, Html.EditorFor)
+            @PersonalData(model => model.SocialNetworkUrl, Html.EditorFor)
+            @PersonalData(model => model.Phone, Html.EditorFor)
+            @PersonalData(model => model.Profession, Html.EditorFor)
+            @PersonalData(model => model.EnglishLevel, Html.EnumDropDownListFor)
+            @PersonalData(model => model.WorkTimeRange, Html.EditorFor)
+        </section>
+
+        <section class="workshop-application-section">
+            <h3>
+                <span>@Html.Localize("WorkShopApplicationMotivation")</span>
+            </h3>
+
+            @MotivationData(model => model.VolunteeringMotivation, Html.EditorFor)
+        </section>
+
+        <section class="workshop-application-section">
+            <div class="row">
+                <div class="1u">
+                    @Html.EditorFor(model => model.ProcessData)
+                </div>
+                <div class="11u noPadding">
+                    @Html.LabelFor(model => model.ProcessData)
+                    @Html.ValidationMessageFor(model => model.ProcessData)
+                </div>
+            </div>
+        </section>
+
+        <a class="button" href="#" onclick="$(this).closest('form').submit()">@Html.Localize("WorkShopApplicationSubmit")</a>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".calendar").datepicker({
+                    dateFormat: "dd.mm.yy",
+                    changeYear: true,
+                    changeMonth: true,
+                    yearRange: "-75:-5",
+                });
+            });
+        </script>
+    }
+}

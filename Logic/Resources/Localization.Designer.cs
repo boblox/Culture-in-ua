@@ -106,7 +106,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proficiency in English.
+        ///   Looks up a localized string similar to Proficiency in english.
         /// </summary>
         public static string ApplicationModelEnglishLevel {
             get {
@@ -250,11 +250,47 @@ namespace Logic.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vk or facebook url.
+        /// </summary>
+        public static string ApplicationModelSocialNetworkUrl {
+            get {
+                return ResourceManager.GetString("ApplicationModelSocialNetworkUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Surname.
         /// </summary>
         public static string ApplicationModelSurname {
             get {
                 return ResourceManager.GetString("ApplicationModelSurname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid url.
+        /// </summary>
+        public static string ApplicationModelUrlInvalid {
+            get {
+                return ResourceManager.GetString("ApplicationModelUrlInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Why are you interested in becoming a volunteer of the workshop?.
+        /// </summary>
+        public static string ApplicationModelVolunteeringMotivation {
+            get {
+                return ResourceManager.GetString("ApplicationModelVolunteeringMotivation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Days and times in which you can be present.
+        /// </summary>
+        public static string ApplicationModelWorkTimeRange {
+            get {
+                return ResourceManager.GetString("ApplicationModelWorkTimeRange", resourceCulture);
             }
         }
         
@@ -367,7 +403,7 @@ namespace Logic.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your application is received. Thank you!.
+        ///   Looks up a localized string similar to Your application is received. Thank you for registration!.
         /// </summary>
         public static string WorkShopApplicationReceived {
             get {
@@ -381,6 +417,42 @@ namespace Logic.Resources {
         public static string WorkShopApplicationSubmit {
             get {
                 return ResourceManager.GetString("WorkShopApplicationSubmit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your application for the first day of workshop &quot;Regeneration of industrial buildings in Ukraine&quot;, which will be held at Jam Factory September 24 from 14:00 to 20:00, successfully accepted. Your number - {0}. Read more about the program &lt;a href=&quot;http://culture.in.ua/en/projects/regeneration-of-industrial-buildings/program/&quot;&gt;here&lt;/a&gt;. Thank you for registration!.
+        /// </summary>
+        public static string WorkShopFirstDayApplicationEmailBody {
+            get {
+                return ResourceManager.GetString("WorkShopFirstDayApplicationEmailBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration for the first day of workshop.
+        /// </summary>
+        public static string WorkShopFirstDayApplicationEmailSubject {
+            get {
+                return ResourceManager.GetString("WorkShopFirstDayApplicationEmailSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unfortunately number of places are limited. We can not register you..
+        /// </summary>
+        public static string WorkShopFirstDayApplicationLimitExceeded {
+            get {
+                return ResourceManager.GetString("WorkShopFirstDayApplicationLimitExceeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for the registration! Your application for the first day of workshop &quot;Regeneration of industrial buildings in Ukraine&quot; is received and we sent you the email with further info. Your number -  {0}. Please remember it, you will need to know it at the entrance to the event.
+        /// </summary>
+        public static string WorkShopFirstDayApplicationReceived {
+            get {
+                return ResourceManager.GetString("WorkShopFirstDayApplicationReceived", resourceCulture);
             }
         }
     }

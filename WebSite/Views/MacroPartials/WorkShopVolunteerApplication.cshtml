@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var getApplicationsStr = Request.QueryString["getApplications"];
+    bool getApplications;
+}
+
+@if (bool.TryParse(getApplicationsStr, out getApplications) && getApplications)
+{
+    @Html.ActionLink("Скачати заявки", "GetApplications", "WorkShopVolunteerApplication")
+}
+else
+{
+    @Html.Action("Index", "WorkShopVolunteerApplication")
+}

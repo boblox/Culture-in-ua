@@ -1,4 +1,6 @@
-﻿@inherits UmbracoTemplatePage
+﻿@using Logic.Helpers;
+
+@inherits UmbracoTemplatePage
 @{
     // Model.Content is the current page that we're on
     // AncestorsOrSelf is all of the ancestors this page has in the tree
@@ -23,7 +25,10 @@
                             <a href="@feature.Url" class="image image-full"><img src="@feature.Image" alt="" /></a>
                         }
                         <h3><a href="@feature.Url">@feature.Title</a></h3>
-                        @Umbraco.Truncate(feature.BodyText, 100)
+                        <span class="byline">
+                            @Html.GetInnerText(string.IsNullOrWhiteSpace(feature.SubHeader) ?
+                                (HtmlString)feature.BodyText : new HtmlString(feature.SubHeader), 100)
+                        </span>
                     </section>
                     <!-- /Feature -->
                 </div>
