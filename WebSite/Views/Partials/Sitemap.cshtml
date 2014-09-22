@@ -1,32 +1,33 @@
 ﻿@inherits UmbracoViewPage<IPublishedContent>
 @{
     Layout = null;
-    var rootContent = Model.Siblings().Where(x => x.IsVisible());
-
-    foreach (var content in rootContent)
+    var parent = Model.Parent;
+    @DrawNode(parent)
+    @DrawVisibleChildNodes(parent)
+    var newsRoot = parent.Children().FirstOrDefault(i => i.DocumentTypeAlias == "umbNewsOverview");
+    if (newsRoot != null)
     {
-        @DrawNode(content)
-        @DrawChildNodes(content)
-        var newsRoot = content.Children().FirstOrDefault(i => i.DocumentTypeAlias == "umbNewsOverview");
-        if (newsRoot != null)
-        {
-            @DrawNewsNodes(newsRoot)
-        }
+        @DrawChildNodes(newsRoot)
+    }
+    var humanNodes = parent.Descendants("umbHumansOverview");
+    foreach (var humanNode in humanNodes)
+    {
+        @DrawChildNodes(humanNode)
+    }
+}
+
+@helper DrawVisibleChildNodes(IPublishedContent startNode)
+{
+    foreach (var node in startNode.Children.Where(x => x.IsVisible()))
+    {
+        @DrawNode(node)
+        @DrawVisibleChildNodes(node)
     }
 }
 
 @helper DrawChildNodes(IPublishedContent startNode)
 {
-    foreach (var node in startNode.Children.Where(x => x.IsVisible()))
-    {
-        @DrawNode(node)
-        @DrawChildNodes(node)
-    }
-}
-
-@helper DrawNewsNodes(IPublishedContent newsRoot)
-{
-    foreach (var node in newsRoot.Children)
+    foreach (var node in startNode.Children)
     {
         @DrawNode(node)
     }
