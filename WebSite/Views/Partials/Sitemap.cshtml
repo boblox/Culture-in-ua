@@ -1,0 +1,44 @@
+﻿@inherits UmbracoViewPage<IPublishedContent>
+@{
+    Layout = null;
+    var rootContent = Model.Siblings().Where(x => x.IsVisible());
+
+    foreach (var content in rootContent)
+    {
+        <url>
+            <loc>@content.Url</loc>
+            @*<loc>@GetUrlWithDomainPrefix(content.Url, content.Name)</loc>*@
+            <lastmod>@(string.Format("{0:s}+00:00", content.UpdateDate))</lastmod>
+        </url>
+        @ListChildNodes(content);
+    }
+}
+
+@helper ListChildNodes(IPublishedContent startNode)
+{
+    foreach (var node in startNode.Children.Where(x => x.IsVisible()))
+    {
+        <url>
+            <loc>@Umbraco.NiceUrl(node.Id)</loc>
+            @*<loc>@GetUrlWithDomainPrefix(node.Url, node.Name)</loc>*@
+            <lastmod>@(string.Format("{0:s}+00:00", node.UpdateDate))</lastmod>
+        </url>
+        @ListChildNodes(node)
+    }
+}
+
+@functions {
+    private static string GetUrlWithDomainPrefix(string url, string name)
+    {
+
+        if (url.StartsWith("/"))
+            url = url.Substring(1);
+
+        var domainPrefix = string.Format("http://{0}/", HttpContext.Current.Request.ServerVariables["HTTP_HOST"]);
+
+        if (url.StartsWith(domainPrefix))
+            return url;
+        else
+            return domainPrefix + url;
+    }
+}
