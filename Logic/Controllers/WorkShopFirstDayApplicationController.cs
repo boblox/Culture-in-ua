@@ -15,7 +15,7 @@ namespace Logic.Controllers
 {
     public class WorkShopFirstDayApplicationController : SurfaceController
     {
-        const int MaxApplicationsCount = 50;
+        const int MaxApplicationsCount = 55;
 
         #region Actions
 
