@@ -75,27 +75,31 @@
 
 <div id="main-wrapper">
     <div id="main" class="container">
-        <!-- Content -->
-        <article class="content">
-            <header>
-                <h1>@pageTitle</h1>
-            </header>
+        <div class="row">
+            <!-- Content -->
+            <div class="12u">
+                <article class="content">
+                    <header>
+                        <h1>@pageTitle</h1>
+                    </header>
 
-            <section class="is-gallery">
-                @{ Html.RenderPartial("/Views/Partials/Breadcrumb.cshtml"); }
+                    <section class="is-gallery">
+                        @{ Html.RenderPartial("/Views/Partials/Breadcrumb.cshtml"); }
 
-                <!--Render each itemsPerRow items in row-->
-                @for (int i = 0; i < (childGalleries.Count() + subGalleriesPerRow - 1) / subGalleriesPerRow; i++)
-                {
-                    @RenderSubGalleryRow(childGalleries.Skip(i * subGalleriesPerRow).Take(subGalleriesPerRow))
-                }
-                @for (int i = 0; i < (media.Count() + imagesPerRow - 1) / imagesPerRow; i++)
-                {
-                    @RenderImagesRow(media.Skip(i * imagesPerRow).Take(imagesPerRow))
-                }
-            </section>
-        </article>
-        <!-- /Content -->
+                        <!--Render each itemsPerRow items in row-->
+                        @for (int i = 0; i < (childGalleries.Count() + subGalleriesPerRow - 1) / subGalleriesPerRow; i++)
+                        {
+                            @RenderSubGalleryRow(childGalleries.Skip(i * subGalleriesPerRow).Take(subGalleriesPerRow))
+                        }
+                        @for (int i = 0; i < (media.Count() + imagesPerRow - 1) / imagesPerRow; i++)
+                        {
+                            @RenderImagesRow(media.Skip(i * imagesPerRow).Take(imagesPerRow))
+                        }
+                    </section>
+                </article>
+            </div>
+            <!-- /Content -->
+        </div>
     </div>
 </div>
 <script type="text/javascript">
