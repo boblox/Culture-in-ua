@@ -75,35 +75,27 @@
 
 <div id="main-wrapper">
     <div id="main" class="container">
-        <div class="row">
-            <!-- Content -->
-            <article class="content">
-                <header>
-                    <h1>@pageTitle</h1>
-                </header>
+        <!-- Content -->
+        <article class="content">
+            <header>
+                <h1>@pageTitle</h1>
+            </header>
 
-                <section class="is-gallery">
-                    @{ Html.RenderPartial("/Views/Partials/Breadcrumb.cshtml"); }
+            <section class="is-gallery">
+                @{ Html.RenderPartial("/Views/Partials/Breadcrumb.cshtml"); }
 
-                    <!--Render each itemsPerRow items in row-->
-                    @for (int i = 0; i < (childGalleries.Count() + subGalleriesPerRow - 1) / subGalleriesPerRow; i++)
-                    {
-                        @RenderSubGalleryRow(childGalleries.Skip(i * subGalleriesPerRow).Take(subGalleriesPerRow))
-                    }
-                    @for (int i = 0; i < (media.Count() + imagesPerRow - 1) / imagesPerRow; i++)
-                    {
-                        @RenderImagesRow(media.Skip(i * imagesPerRow).Take(imagesPerRow))
-                    }
-                </section>
-            </article>
-            <!-- /Content -->
-        </div>
-        @* Don't display this overview*@
-        @*<div class="row">
-                <div class="12u">
-                    @{ Html.RenderPartial("umbFeatures"); }
-                </div>
-            </div>*@
+                <!--Render each itemsPerRow items in row-->
+                @for (int i = 0; i < (childGalleries.Count() + subGalleriesPerRow - 1) / subGalleriesPerRow; i++)
+                {
+                    @RenderSubGalleryRow(childGalleries.Skip(i * subGalleriesPerRow).Take(subGalleriesPerRow))
+                }
+                @for (int i = 0; i < (media.Count() + imagesPerRow - 1) / imagesPerRow; i++)
+                {
+                    @RenderImagesRow(media.Skip(i * imagesPerRow).Take(imagesPerRow))
+                }
+            </section>
+        </article>
+        <!-- /Content -->
     </div>
 </div>
 <script type="text/javascript">
