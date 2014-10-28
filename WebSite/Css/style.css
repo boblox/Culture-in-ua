@@ -546,6 +546,7 @@ ul.meta {
 
 .footer-base {
     display: inline-block;
+    vertical-align: top;
     /*background: #e7eae8;*/
     /*padding: 0.75em;*/
     border-radius: 8px;
@@ -660,7 +661,7 @@ ul.contact {
 
 .copyright {
     display: inline-block;
-    vertical-align: top;
+    float: left;
 }
 
 /*********************************************************************************/

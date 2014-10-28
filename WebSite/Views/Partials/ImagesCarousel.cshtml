@@ -27,7 +27,10 @@
             carousel.owlCarousel({
                 items: 1,
                 lazyLoad: true,
-                dotsSpeed: 800
+                dotsSpeed: 800,
+                //smartSpeed:3000,
+                animateOut: 'fadeOut',
+                //animateIn: 'fadeIn'
             });
             carouselWrapper.find('.owl-carousel-prev').click(function () {
                 carousel.trigger('prev.owl.carousel', [800]);
