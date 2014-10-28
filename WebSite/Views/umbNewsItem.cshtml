@@ -9,12 +9,19 @@
         : CurrentPage.Title;
 }
 
+@section Scripts
+{
+    <script src="/js/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="/css/OwlCarousel/owl.carousel.css" />
+    <link rel="stylesheet" href="/css/OwlCarousel/owl.theme.green.css" />
+}
+
 @section Body
 {
     <header>
-        <h2>@pageTitle</h2>
+        <h1>@pageTitle</h1>
     </header>
-    <section>
+    <section class="is-page-content">
         @*Do not show image*@
         @*@if (string.IsNullOrWhiteSpace(CurrentPage.Image) == false)
             {
@@ -30,6 +37,6 @@
     @{ Html.RenderPartial("umbLatestNewsWithHeaderWidget"); }
 }
 
-@section Footer{
+@*@section Footer{
     @{ Html.RenderPartial("umbFeatures"); }
-}
+}*@

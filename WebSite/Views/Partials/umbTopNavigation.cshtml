@@ -7,7 +7,7 @@
     var homePage = CurrentPage.AncestorsOrSelf(1).First();
 }
 <!-- Nav -->
-<nav id="nav" class="skel-panels-fixed">
+<nav id="nav">
     @{
         var dict = new ViewDataDictionary(ViewData) { { "menuItem", homePage } };
         Html.RenderPartial("umbTopNavigationList", dict);

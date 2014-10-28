@@ -10,52 +10,6 @@
     const string dateFormat = "{0:dd.MM.yyyy}";
 }
 
-@functions
-{
-    private delegate MvcHtmlString EditorDelegate<TModel, TValue>(Expression<Func<TModel, TValue>> expression);
-
-    HelperResult PersonalData<TValue>(Expression<Func<ApplicationType, TValue>> expression, EditorDelegate<ApplicationType, TValue> editor)
-    {
-        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
-    }
-
-    HelperResult MotivationData<T>(Expression<Func<ApplicationType, T>> expression, EditorDelegate<ApplicationType, T> editor)
-    {
-        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
-    }
-
-    HelperResult PersonalData<T>(Expression<Func<ApplicationType, T>> expression, MvcHtmlString editorString)
-    {
-        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editorString);
-    }
-}
-
-@helper PersonalDataHelper(MvcHtmlString labelString, MvcHtmlString validationString, MvcHtmlString editorString)
-{
-    <div class="row">
-        <div class="3u">
-            @labelString
-        </div>
-        <div class="9u">
-            @editorString
-            @validationString
-        </div>
-    </div>
-}
-
-@helper MotivationDataHelper(MvcHtmlString labelString, MvcHtmlString validationString, MvcHtmlString editorString)
-{
-    <div class="row">
-        <div class="4u">
-            @labelString
-        </div>
-        <div class="8u">
-            @editorString
-            @validationString
-        </div>
-    </div>
-}
-
 @if (TempData["Application received"] != null)
 {
     <h3>@Html.Localize("WorkShopApplicationReceived")</h3>
@@ -75,19 +29,19 @@ else
                 <span>@Html.Localize("WorkShopApplicationPersonalData")</span>
             </h3>
 
-            @PersonalData(model => model.Name, Html.EditorFor)
-            @PersonalData(model => model.Surname, Html.EditorFor)
-            @PersonalData(model => model.BirthDate, @Html.TextBoxFor(model => model.BirthDate, @dateFormat, new { @class = "calendar" }))
-            @PersonalData(model => model.Country, Html.EditorFor)
-            @PersonalData(model => model.City, Html.EditorFor)
-            @PersonalData(model => model.Email, Html.EditorFor)
-            @PersonalData(model => model.Phone, Html.EditorFor)
-            @PersonalData(model => model.Profession, Html.EditorFor)
-            @PersonalData(model => model.EnglishLevel, Html.EnumDropDownListFor)
-            @PersonalData(model => model.OrganizationName, Html.EditorFor)
-            @PersonalData(model => model.LegalStatus, Html.EnumDropDownListFor)
-            @PersonalData(model => model.OrganizationInfo, Html.EditorFor)
-            @PersonalData(model => model.ParticipantsNumber, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.Name, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.Surname, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.BirthDate, Html.TextBoxFor(model => model.BirthDate, dateFormat, new { @class = "calendar" }))
+            @ApplicationHelpers.PersonalData(Html, model => model.Country, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.City, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.Email, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.Phone, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.Profession, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.EnglishLevel, Html.EnumDropDownListFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.OrganizationName, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.LegalStatus, Html.EnumDropDownListFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.OrganizationInfo, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.ParticipantsNumber, Html.EditorFor)
         </section>
 
         <section class="workshop-application-section">
@@ -95,12 +49,12 @@ else
                 <span>@Html.Localize("WorkShopApplicationMotivation")</span>
             </h3>
 
-            @MotivationData(model => model.Motivation1, Html.EditorFor)
-            @MotivationData(model => model.Motivation2, Html.EditorFor)
-            @MotivationData(model => model.Motivation3, Html.EditorFor)
-            @MotivationData(model => model.Motivation4, Html.EditorFor)
-            @MotivationData(model => model.Motivation5, Html.EditorFor)
-            @MotivationData(model => model.Motivation6, Html.EditorFor)
+            @ApplicationHelpers.MotivationData(Html, model => model.Motivation1, Html.EditorFor)
+            @ApplicationHelpers.MotivationData(Html, model => model.Motivation2, Html.EditorFor)
+            @ApplicationHelpers.MotivationData(Html, model => model.Motivation3, Html.EditorFor)
+            @ApplicationHelpers.MotivationData(Html, model => model.Motivation4, Html.EditorFor)
+            @ApplicationHelpers.MotivationData(Html, model => model.Motivation5, Html.EditorFor)
+            @ApplicationHelpers.MotivationData(Html, model => model.Motivation6, Html.EditorFor)
         </section>
 
         <section class="workshop-application-section">

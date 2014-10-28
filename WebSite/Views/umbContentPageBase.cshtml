@@ -2,17 +2,23 @@
 @{
     Layout = "umbLayout.cshtml";
 }
+
+@section Scripts{
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+}
+
 <div id="main-wrapper">
     <div id="main" class="container">
         <div class="row">
             <div class="9u">
-                <div class="content content-left">
-                    <!-- Content -->
-                    <article class="is-page-content">
-                        @RenderSection("Body")
-                    </article>
-                    <!-- /Content -->
-                </div>
+                <!-- Content -->
+                <article class="content">
+                    @RenderSection("Body")
+                </article>
+                <!-- /Content -->
             </div>
             <div class="3u">
                 <div class="sidebar">

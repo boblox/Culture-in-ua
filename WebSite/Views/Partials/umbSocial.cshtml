@@ -8,17 +8,15 @@
 }
 
 <!-- Contact -->
-<section>
-    @*<h2 class="major"><span>@Umbraco.GetDictionaryValue("WeInSocialNetworks")</span></h2>*@
-    <ul class="contact">
-        @RenderLinkIfNotEmpty(homePage.FacebookLink, "facebook", "Facebook", @Umbraco.GetDictionaryValue("WeInSocialNetworks"))
-        @*@RenderLinkIfNotEmpty(homePage.TwitterLink, "twitter", "Twitter")
+@*<h2 class="major"><span>@Umbraco.GetDictionaryValue("WeInSocialNetworks")</span></h2>*@
+<ul class="contact">
+    @RenderLinkIfNotEmpty(homePage.FacebookLink, "facebook", "Facebook", @Umbraco.GetDictionaryValue("WeInSocialNetworks"))
+    @*@RenderLinkIfNotEmpty(homePage.TwitterLink, "twitter", "Twitter")
         @RenderLinkIfNotEmpty(homePage.RssLink, "rss", "RSS")
         @RenderLinkIfNotEmpty(homePage.DribbbleLink, "dribbble", "Dribbble")
         @RenderLinkIfNotEmpty(homePage.LinkedinLink, "linkedin", "Linked In")
         @RenderLinkIfNotEmpty(homePage.GoogleLink, "googleplus", "Google+")*@
-    </ul>
-</section>
+</ul>
 <!-- /Contact -->
 
 @helper RenderLinkIfNotEmpty(dynamic link, string cssClass, string linkName, string title)

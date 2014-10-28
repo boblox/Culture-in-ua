@@ -1,28 +1,30 @@
-﻿@*@using System.Linq.Expressions
+﻿@using System.Linq.Expressions
 @using System.Web.Mvc
 @using System.Web.Mvc.Html
-@using Logic.Models
 
 @functions
 {
-    private delegate MvcHtmlString EditorDelegate<TModel, TValue>(Expression<Func<TModel, TValue>> expression);
-
-    HelperResult PersonalData<TModel, TValue>(Expression<Func<TModel, TValue>> expression, EditorDelegate<TModel, TValue> editor)
+    private static HtmlHelper<TModel> GetHtml<TModel>()
     {
-        var expressionFunc = expression.Compile();Model
-        //var helper = new HtmlHelper<TModel>(ViewContext, ViewData);
-        //helper.LabelFor<TModel, TValue>(expression);Html.Label()
-        return PersonalDataHelper(Html.Label(expressionFunc()), Html.ValidationMessageFor(expression), editor(expression));
+        return ((WebViewPage<TModel>)CurrentPage).Html;
     }
 
-    HelperResult MotivationData<T>(Expression<Func<WorkShopApplication, T>> expression, EditorDelegate<WorkShopApplication, T> editor)
+    public delegate MvcHtmlString EditorDelegate<TModel, TValue>(Expression<Func<TModel, TValue>> expression);
+
+    public static HelperResult PersonalData<TModel, TValue>(HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, EditorDelegate<TModel, TValue> editor)
     {
-        return MotivationDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
+        return PersonalDataHelper(html.LabelFor(expression), html.ValidationMessageFor(expression), editor(expression));
     }
 
-    HelperResult PersonalData<T>(Expression<Func<WorkShopApplication, T>> expression, MvcHtmlString editorString)
+    public static HelperResult MotivationData<TModel, TValue>(HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression,
+        EditorDelegate<TModel, TValue> editor)
     {
-        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editorString);
+        return MotivationDataHelper(html.LabelFor(expression), html.ValidationMessageFor(expression), editor(expression));
+    }
+
+    public static HelperResult PersonalData<TModel, TValue>(HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, MvcHtmlString editorString)
+    {
+        return PersonalDataHelper(html.LabelFor(expression), html.ValidationMessageFor(expression), editorString);
     }
 }
 
@@ -50,4 +52,4 @@
             @validationString
         </div>
     </div>
-}*@
+}

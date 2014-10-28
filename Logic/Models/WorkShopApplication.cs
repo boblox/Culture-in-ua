@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Logic.Enums;
 using Logic.Helpers;
 using Logic.Resources;
-using Umbraco.Web;
 
 namespace Logic.Models
 {

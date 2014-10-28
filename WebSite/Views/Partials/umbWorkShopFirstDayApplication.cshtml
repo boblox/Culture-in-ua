@@ -3,42 +3,6 @@
 
 @model ApplicationType
 
-@functions
-{
-    private delegate MvcHtmlString EditorDelegate<TModel, TValue>(Expression<Func<TModel, TValue>> expression);
-
-    HelperResult PersonalData<T>(Expression<Func<ApplicationType, T>> expression, EditorDelegate<ApplicationType, T> editor)
-    {
-        return PersonalDataHelper(Html.LabelFor(expression), Html.ValidationMessageFor(expression), editor(expression));
-    }
-}
-
-@helper PersonalDataHelper(MvcHtmlString labelString, MvcHtmlString validationString, MvcHtmlString editorString)
-{
-    <div class="row">
-        <div class="3u">
-            @labelString
-        </div>
-        <div class="9u">
-            @editorString
-            @validationString
-        </div>
-    </div>
-}
-
-@helper MotivationDataHelper(MvcHtmlString labelString, MvcHtmlString validationString, MvcHtmlString editorString)
-{
-    <div class="row">
-        <div class="4u">
-            @labelString
-        </div>
-        <div class="8u">
-            @editorString
-            @validationString
-        </div>
-    </div>
-}
-
 @if (ViewData["Applications count limit exceeded"] != null)
 {
     <p>
@@ -66,12 +30,12 @@ else
             <h3>
                 <span>@Html.Localize("WorkShopApplicationPersonalData")</span>
             </h3>
-
-            @PersonalData(model => model.Name, Html.EditorFor)
-            @PersonalData(model => model.Surname, Html.EditorFor)
-            @PersonalData(model => model.Email, Html.EditorFor)
-            @PersonalData(model => model.Phone, Html.EditorFor)
-            @PersonalData(model => model.Profession, Html.EditorFor)
+            
+            @ApplicationHelpers.PersonalData(Html, model => model.Name, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.Surname, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.Email, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.Phone, Html.EditorFor)
+            @ApplicationHelpers.PersonalData(Html, model => model.Profession, Html.EditorFor)
         </section>
 
         <section class="workshop-application-section">

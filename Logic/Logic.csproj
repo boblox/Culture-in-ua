@@ -67,6 +67,7 @@
     <Compile Include="Enums\LegalStatus.cs" />
     <Compile Include="Enums\EnglishLevel.cs" />
     <Compile Include="Helpers\DbCsvReader.cs" />
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Helpers\HtmlHelperExtensions.cs" />
     <Compile Include="Helpers\MyDateTimeModelBinder.cs" />
     <Compile Include="Helpers\RequiredTrueAttribute.cs" />

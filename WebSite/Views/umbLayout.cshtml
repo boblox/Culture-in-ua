@@ -1,4 +1,5 @@
-﻿@inherits UmbracoTemplatePage
+﻿@using umbraco.BasePages
+@inherits UmbracoTemplatePage
 @{
     Layout = null;
 }<!DOCTYPE html>
@@ -21,47 +22,32 @@
     <script src="/js/jquery.validate.unobtrusive.min.js"></script>
 
     <script src="/js/jquery.dropotron.min.js"></script>
-    <script src="/js/config.js"></script>
     <script src="/js/skel.min.js"></script>
-    <script src="/js/skel-panels.min.js"></script>
-    <noscript>
-        <link rel="stylesheet" href="/css/skel-noscript.css" />
-        <link rel="stylesheet" href="/css/style.css" />
-        <link rel="stylesheet" href="/css/style-desktop.css" />
-    </noscript>
+    <script src="/js/skel-layers.min.js"></script>
+
+    <script src="/js/config.js"></script>
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style-desktop.css" media="(min-width: 481px)" />
+    <link rel="stylesheet" href="/css/style-1000px.css" media="(min-width: 481px) and (max-width: 1200px)" />
+    <link rel="stylesheet" href="/css/style-mobile.css" media="(max-width: 480px)" />
     <link rel="stylesheet" href="/css/jquery-ui.min.css" />
+
+
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><script src="/js/html5shiv.js"></script><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
     <!--[if lte IE 7]><link rel="stylesheet" href="/css/ie7.css" /><![endif]-->
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
 </head>
 <body class="homepage">
     <!-- /Header -->
     @{ Html.RenderPartial("umbTopNavigation"); }
-
-    <div class="languageSwitcher">
-        @Umbraco.RenderMacro("MLLanguageSwitcher", new { rendertype = "List" })
-    </div>
-
     @{ Html.RenderPartial("umbHeader"); }
     @RenderBody()
-    <!-- Footer -->
-    <footer id="footer" class="container">
-        <div class="row">
-            <div class="12u">
-                @{ Html.RenderPartial("umbSocial"); }
-            </div>
-        </div>
-        <div class="row">
-            <!-- Copyright -->
-            <div class="12u">
-                <div id="copyright">
-                    &copy; @DateTime.Now.Year @Umbraco.Field("copyright", recursive: true)
-                </div>
-            </div>
-            <!-- /Copyright -->
-        </div>
-    </footer>
-    <!-- /Footer -->
+    @{ Html.RenderPartial("umbFooter"); }
 </body>
 </html>

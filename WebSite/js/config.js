@@ -1,20 +1,43 @@
-/*
-	TXT 2.0 by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
-window._skel_config = {
-    preset: 'standard',
-    prefix: '/css/style',
-    resetCSS: true
-};
-
-window._skel_panels_config = {
-    preset: 'standard'
-};
-
 jQuery(function () {
+    skel.init({
+        preset: 'standard',
+        prefix: '/css/style',
+        reset: 'full',
+        grid: { gutters: '2.5em' },
+        breakpoints: {
+            desktop: { range: "1201-", containers: 1200 },
+            '1000px': { range: "481-1200", containers: '90%' },
+            mobile: { range: "-480", containers: "fluid", lockViewport: true, grid: { collapse: true } }
+        },
+        plugins: {
+            layers: {
+                config: {
+                    baseZIndex: 1000,
+                    transform: false
+                },
+                titleBar: {
+                    breakpoints: ['mobile'],
+                    position: 'top-left',
+                    width: '100%',
+                    height: 44,
+                    html: '<div class="toggle" data-action="toggleLayer" data-args="navPanel">&equiv;</div>'
+                },
+                navPanel: {
+                    breakpoints: ['mobile'],
+                    position: 'top-left',
+                    width: 300,
+                    height: '100%',
+                    orientation: 'vertical',
+                    side: 'left',
+                    hidden: true,
+                    animation: 'pushX',
+                    clickToHide: true,
+                    html: '<div data-args="nav" data-action="navList"></div>'
+                }
+            }
+        }
+    });
+
     jQuery('#nav > ul').dropotron({
         offsetY: -6,
         offsetX: -1,

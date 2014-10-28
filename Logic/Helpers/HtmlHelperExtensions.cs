@@ -1,11 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using Logic.Resources;
+using Umbraco.Core;
 using Umbraco.Web;
 
 namespace Logic.Helpers
@@ -58,6 +60,12 @@ namespace Logic.Helpers
         {
             var format = Localization.ResourceManager.GetString(key) ?? string.Empty;
             return new MvcHtmlString(string.Format(format, args));
+        }
+
+        public static MvcHtmlString GetThumbnailUrl(this HtmlHelper html, string url)
+        {
+            var extension = Path.GetExtension(url);
+            return new MvcHtmlString(url.TrimEnd(extension) + "_thumb" + extension);
         }
     }
 }

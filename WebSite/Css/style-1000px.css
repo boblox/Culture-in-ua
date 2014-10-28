@@ -11,7 +11,7 @@
 body {
     min-width: 960px;
     font-size: 10.25pt;
-    line-height: 1.75em;
+    line-height: 1.8em;
 }
 
 h2.major {
@@ -22,10 +22,6 @@ h2.major {
         top: -0.75em;
         padding: 0 1em 0 1em;
     }
-
-#footer-wrapper h2.major {
-    margin: 0 0 1em 0;
-}
 
 /*********************************************************************************/
 /* Wrappers                                                                      */

@@ -27,10 +27,13 @@
                 <section class="human-overview-section">
                     @if (string.IsNullOrWhiteSpace(item.Image) == false)
                     {
-                        <a href="@item.Url" class="image image-full"><img src="@item.Image" alt="" /></a>
+                        <a href="@item.Url" class="image image-full">
+                            @*<img src="@Html.GetThumbnailUrl((string)item.Image)" alt="" />*@
+                            <img src="@item.Image" alt="" />
+                        </a>
                     }
                     <h3><a href="@item.Url">@title</a></h3>
-                    @item.Occupation
+                    <span>@item.Occupation</span>
                 </section>
             </div>
         }
@@ -43,9 +46,9 @@
         <div class="row">
             @*<div class="12u skel-cell-mainContent">*@
             <!-- Content -->
-            <article class="is-page-content">
+            <article class="content">
                 <header>
-                    <h2>@pageTitle</h2>
+                    <h1>@pageTitle</h1>
                 </header>
                 
                 <!--Render each itemsPerRow items in row-->

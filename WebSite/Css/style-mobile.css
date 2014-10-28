@@ -9,14 +9,16 @@
 /*********************************************************************************/
 
 body {
-    line-height: 1.75em;
     font-size: 10pt;
     letter-spacing: 0;
 }
 
-h2, h3, h4, h5, h6 {
-    font-size: 1.5em;
+h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.5em 0;
+}
+
+h1 {
+    font-size: 2.25em;
 }
 
 h2 {
@@ -56,64 +58,9 @@ article {
     text-align: center;
 }
 
-ul.special {
-}
-
-    ul.special li {
-        margin: 0.1em;
-    }
-
-        ul.special li:hover {
-            top: 0;
-        }
-
-    ul.special a {
-        width: 9.5em;
-        height: 9.5em;
-        border-radius: 4.75em;
-    }
-
-        ul.special a:before {
-            width: 128px;
-            height: 128px;
-            left: 50%;
-            top: 50%;
-            margin-top: -64px;
-            margin-left: -64px;
-            background: url('images/icons-special.png');
-        }
-
-ul.contact {
-}
-
-    ul.contact li {
-        margin: 0 0.15em 0.35em 0;
-        top: 0 !important;
-    }
-
 /*********************************************************************************/
 /* Section + Article Types                                                       */
 /*********************************************************************************/
-
-.is-highlight {
-}
-
-    .is-highlight .special {
-    }
-
-    .is-highlight h2 {
-        font-size: 2.25em;
-        line-height: 1.25em;
-        margin: 0 0 0.5em 0;
-    }
-
-    .is-highlight .byline {
-        margin: 0 0 0.75em 0;
-    }
-
-    .is-highlight br {
-        display: none;
-    }
 
 .is-feature {
 }
@@ -126,39 +73,9 @@ ul.contact {
     margin: 0 !important;
 }
 
-    .is-post-summary h3 {
-        font-size: 1.25em;
-    }
-
-.is-post {
-}
-
-    .is-post h3 {
-        font-size: 2.25em;
-        line-height: 1.25em;
-        margin: 0 0 0.5em 0;
-    }
-
-    .is-post .byline {
-        margin: 0 0 0.75em 0;
-    }
-
-    .is-post ul.meta {
-        margin: 0 0 0.5em 0;
-    }
-
-    .is-post header {
-        margin: 0 0 3em 0;
-    }
-
 .is-page-content {
-}
 
-    .is-page-content h2 {
-        font-size: 2.25em;
-        line-height: 1.35em;
-        margin: 0 0 0.5em 0;
-    }
+}
 
     .is-page-content .byline {
         margin: 0 0 0.75em 0;
@@ -183,46 +100,18 @@ ul.contact {
 /* Sidebar + Content                                                             */
 /*********************************************************************************/
 
-.sidebar {
-    /*border-top: solid 2px #e7eae8;*/
-    /*padding-top: 4em;*/
-    /*margin-top: 1em;
-    border-bottom: solid 2px #e7eae8;*/
-    /*padding-bottom: 4em;*/
-}
-
-    .sidebar > section {
-        margin: 0 0 5em 0 !important;
-    }
-
-        .sidebar > section:last-child {
-            margin: 0 !important;
-        }
-
 .content {
-    padding-top: 3em;
+
 }
 
-.homepage .content {
-    padding-top: 0;
-}
+    .content header {
+        line-height: 1.35em;
+        margin: 0 0 2.5em 0;
+    }
 
 /*********************************************************************************/
 /* Wrappers                                                                      */
 /*********************************************************************************/
-
-#banner-wrapper {
-    padding: 12em 0 8em 0;
-}
-
-#main-wrapper {
-    border-top-width: 0px;
-    border-bottom-width: 5px;
-}
-
-.homepage #main-wrapper {
-    border-top-width: 15px;
-}
 
 /*********************************************************************************/
 /* Header                                                                        */
@@ -245,6 +134,7 @@ ul.contact {
 /*********************************************************************************/
 .languageSwitcher {
     z-index: 10001;
+    position: absolute;
 }
 
     .languageSwitcher li a {
@@ -261,30 +151,15 @@ ul.contact {
 }
 
 /*********************************************************************************/
-/* Banner                                                                        */
-/*********************************************************************************/
-
-#banner {
-    padding: 3em 20px 3em 20px;
-    margin: 0 !important;
-}
-
-    #banner h2 {
-        font-size: 2.25em;
-        line-height: 1.25em;
-        margin: 0 0 0.5em 0;
-    }
-
-    #banner .byline {
-        margin: 0 0 0.5em 0;
-    }
-
-/*********************************************************************************/
 /* Main                                                                          */
 /*********************************************************************************/
 
+#main-wrapper {
+    padding-bottom: 6.2em;
+}
+
 #main {
-    padding: 1em 20px 1em 20px;
+    padding: 1.5em;
 }
 
     #main > .row {
@@ -295,17 +170,21 @@ ul.contact {
 /* Footer                                                                        */
 /*********************************************************************************/
 
-#footer {
-    padding: 0 20px 0 20px;
+.footer {
 }
 
-    #footer > .row {
+    .footer > .row {
         padding: 1em 0 1em 0;
     }
 
-    #footer section {
-        margin: 0 !important;
-    }
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+
+.copyright {
+    line-height: 4.5em;
+    padding: 0 0.5em 0 0.5em;
+}
 
 /*********************************************************************************/
 /* Mobile UI                                                                     */
