@@ -35,10 +35,10 @@
 
             <div class="3u">
                 <section class="gallery-sub-gallery-item">
-                    @if (string.IsNullOrWhiteSpace(item.ThumbImage) == false)
+                    @if (string.IsNullOrWhiteSpace(item.Image) == false)
                     {
                         <a href="@item.Url" class="image image-full">
-                            <img src="@Html.GetThumbnailUrl((string)item.ThumbImage)" alt="" />
+                            <img src="@Html.GetThumbnailUrl((string)item.Image)" alt="" />
                         </a>
                     }
                     <h3><a href="@item.Url">@title</a></h3>

@@ -26,8 +26,11 @@
                         }
                         <h3><a href="@feature.Url">@feature.Title</a></h3>
                         <span class="byline">
-                            @Html.GetInnerText(string.IsNullOrWhiteSpace(feature.SubHeader) ?
-                                (HtmlString)feature.BodyText : new HtmlString(feature.SubHeader), 100)
+                            @if (feature.HasProperty("SubHeader") || feature.HasProperty("BodyText"))
+                            {
+                                @Html.GetInnerText(string.IsNullOrWhiteSpace(feature.SubHeader) ?
+                                    (HtmlString)feature.BodyText : new HtmlString(feature.SubHeader), 100)
+                            }
                         </span>
                     </section>
                     <!-- /Feature -->
