@@ -11,7 +11,9 @@
                 @{ Html.RenderPartial("/Views/Partials/umbFeatures.cshtml"); }
             </div>
             <div class="3u">
-                @{Html.RenderPartial("umbLatestNewsWithHeaderWidget"); }
+                <article class="sidebar">
+                    @{Html.RenderPartial("umbLatestNewsWithHeaderWidget"); }
+                </article>
             </div>
         </div>
     </div>

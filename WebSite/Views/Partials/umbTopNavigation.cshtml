@@ -7,11 +7,18 @@
     var homePage = CurrentPage.AncestorsOrSelf(1).First();
 }
 <!-- Nav -->
-<nav id="nav">
-    @{
-        var dict = new ViewDataDictionary(ViewData) { { "menuItem", homePage } };
-        Html.RenderPartial("umbTopNavigationList", dict);
-    }
-</nav>
+<div class="nav-wrapper">
+    <div class="container nav-container">
+        <nav id="nav">
+            @{
+                var dict = new ViewDataDictionary(ViewData) { { "menuItem", homePage } };
+                Html.RenderPartial("umbTopNavigationList", dict);
+            }
+        </nav>
+        <div class="language-switcher">
+            @Umbraco.RenderMacro("MLLanguageSwitcher", new { rendertype = "List" })
+        </div>
+    </div>
+</div>
 
 <!-- /Nav -->

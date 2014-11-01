@@ -1,13 +1,21 @@
 jQuery(function () {
+    var $window = $(window),
+    $body = $('body');
+
+    // Disable animations/transitions until the page has loaded.
+    $body.addClass('is-loading');
+    $window.on('load', function () {
+        $body.removeClass('is-loading');
+    });
+
     skel.init({
-        preset: 'standard',
-        prefix: '/css/style',
         reset: 'full',
-        grid: { gutters: '2.5em' },
+        //grid: { gutters: '2.5em' },
         breakpoints: {
-            desktop: { range: "1201-", containers: 1200 },
-            '1000px': { range: "481-1200", containers: '90%' },
-            mobile: { range: "-480", containers: "fluid", lockViewport: true, grid: { collapse: true } }
+            'global': { range: '*', href: '/css/style.css' },
+            'desktop': { range: '737-', href: '/css/style-desktop.css', containers: 1200, grid: { gutters: '2.5em' } },
+            '1000px': { range: '737-1200', href: '/css/style-1000px.css', containers: 960, grid: { gutters: '2.5em' }, viewport: { width: 1080 } },
+            'mobile': { range: '-736', href: '/css/style-mobile.css', containers: '100%', grid: { collapse: true, gutters: '2.5em' }, viewport: { scalable: false } }
         },
         plugins: {
             layers: {
@@ -20,12 +28,12 @@ jQuery(function () {
                     position: 'top-left',
                     width: '100%',
                     height: 44,
-                    html: '<div class="toggle" data-action="toggleLayer" data-args="navPanel">&equiv;</div>'
+                    html: '<div class="toggle" data-action="toggleLayer" data-args="navPanel"></div>'
                 },
                 navPanel: {
                     breakpoints: ['mobile'],
                     position: 'top-left',
-                    width: 300,
+                    width: '80%',
                     height: '100%',
                     orientation: 'vertical',
                     side: 'left',
