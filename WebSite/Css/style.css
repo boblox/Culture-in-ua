@@ -404,7 +404,7 @@ ul.meta {
         .language-switcher li a {
             border-bottom-left-radius: 6px;
             border-bottom-right-radius: 6px;
-            color: #6b7770;
+            color: #da195d;
             display: block;
             outline: 0 none;
             padding: 0.25em 1.5em;
@@ -412,12 +412,12 @@ ul.meta {
         }
 
         .language-switcher li:hover a {
-            background: #C1CAC5;
+            background: #b6dd73;
             color: #fff;
         }
 
         .language-switcher li.current_page_item a {
-            background: none repeat scroll 0 0 #e3daa8;
+            background: none repeat scroll 0 0 #98c34d;
             color: #fff;
         }
 

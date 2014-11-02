@@ -194,7 +194,7 @@ ul.meta {
             text-decoration: none;
             padding: 0.25em 1.5em;
             outline: 0;
-            color: #6b7770;
+            color: #da195d;
             border-bottom-left-radius: 6px;
             border-bottom-right-radius: 6px;
             -moz-transition: background-color .075s ease-in-out, color .075s ease-in-out;
@@ -208,7 +208,7 @@ ul.meta {
         #nav li:hover span,
         #nav li.active a,
         #nav li.active span {
-            background: #C1CAC5;
+            background: #b6dd73;
             color: #fff;
         }
 
@@ -252,7 +252,7 @@ ul.meta {
         .dropotron li.active > a,
         .dropotron li.active > span {
             color: #fff;
-            background: #7B8780;
+            background: #b6dd73;
         }
 
         .dropotron li:first-child {
@@ -279,7 +279,7 @@ ul.meta {
     /*Selected item in menu*/
     #nav li.current_page_item a,
     .dropotron li.current_page_item > a {
-        background: #e3daa8;
+        background: #98c34d;
         color: #fff;
     }
 
