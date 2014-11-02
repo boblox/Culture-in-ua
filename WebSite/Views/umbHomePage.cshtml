@@ -7,13 +7,11 @@
 <div id="main-wrapper">
     <div id="main" class="container">
         <div class="row">
-            <div class="9u">
+            <div class="9u content">
                 @{ Html.RenderPartial("/Views/Partials/umbFeatures.cshtml"); }
             </div>
-            <div class="3u">
-                <article class="sidebar">
-                    @{Html.RenderPartial("umbLatestNewsWithHeaderWidget"); }
-                </article>
+            <div class="3u sidebar">
+                @{Html.RenderPartial("umbLatestNewsWithHeaderWidget"); }
             </div>
         </div>
     </div>

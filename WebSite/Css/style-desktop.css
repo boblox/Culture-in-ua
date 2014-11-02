@@ -40,6 +40,10 @@ h4 {
     font-size: 1.25em;
 }
 
+.byline {
+    font-size: 1.1em;
+}
+
 .button {
     font-size: 1.25em;
     padding: 0.85em 1.85em 0.85em 1.85em;
@@ -54,39 +58,27 @@ h4 {
     opacity: 0.2;
 }
 
+ul.meta {
+    font-size: 0.85em;
+}
+
 /*********************************************************************************/
 /* Section + Article Types                                                       */
 /*********************************************************************************/
 
-.is-feature {
+.featured-page {
     text-align: center;
 }
 
-    .is-feature .byline {
-        font-size: 1.1em;
-    }
-
-.is-page-content {
+.text-content {
+    padding-right: 2em;
 }
 
-    .is-page-content img {
+    .text-content img {
         max-width: 100%;
     }
 
-    .is-page-content header {
-    }
-
-    .is-page-content .byline {
-        font-size: 1.1em;
-        margin: 0 0 0.5em 0;
-    }
-
-    .is-page-content ul.meta {
-        padding-left: 0;
-        margin: 0 0 1em 0;
-    }
-
-.is-gallery .gallery-sub-gallery-item {
+.gallery .gallery-sub-gallery-item {
     text-align: center;
 }
 
@@ -98,12 +90,22 @@ h4 {
 }
 
 .content {
-    padding-right: 2em;
 }
 
     .content header {
         margin: 0 0 2.5em 0;
     }
+
+/*********************************************************************************/
+/* News                                                                          */
+/*********************************************************************************/
+.news-item .byline {
+    margin: 0 0 0.5em 0;
+}
+
+.news-item ul.meta {
+    margin: 0 0 1em 0;
+}
 
 /*********************************************************************************/
 /* Wrappers                                                                      */
@@ -159,6 +161,7 @@ h4 {
     line-height: 3.5em;
     text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1em;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -262,6 +265,10 @@ h4 {
 .footer-wrapper {
 }
 
+.footer-base {
+    font-size: 0.85em;
+}
+
 #footer {
 }
 
@@ -274,7 +281,7 @@ h4 {
 /*********************************************************************************/
 
 .copyright {
-    padding: 0 0.3em 0 1em;
+    padding: 0 1em;
 }
 
 /*********************************************************************************/

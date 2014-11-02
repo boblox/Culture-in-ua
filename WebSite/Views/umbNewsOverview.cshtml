@@ -29,14 +29,12 @@
 <!-- Main -->
 <div id="main-wrapper">
     <div id="main" class="container">
-        <div class="row">
-            @*<div class="12u skel-cell-mainContent">*@
+        <div class="row content">
             <!-- Content -->
-            <article class="is-page-content">
+            <article class="news-overview">
                 <header>
                     <h1>@pageTitle</h1>
                 </header>
-
                 <div class="row">
                     @foreach (var item in newsItems)
                     {
@@ -51,28 +49,26 @@
                         var dateTime = item.PublishDate == default(DateTime)
                             ? item.CreateDate
                             : item.PublishDate;
-                        <div class="3u">
-                            <section>
-                                <h3><a href="@item.Url">@title</a></h3>
-                                <ul class="meta">
-                                    <li class="timestamp">@dateTime.ToString("f")</li>
-                                </ul>
+                        <section class="3u news-item">
+                            <h3><a href="@item.Url">@title</a></h3>
+                            <ul class="meta">
+                                <li class="timestamp">@dateTime.ToString("f")</li>
+                            </ul>
 
-                                @if (string.IsNullOrWhiteSpace(item.Image) == false)
-                                {
-                                    <a href="@item.Url" class="image image-full"><img src="@item.Image" alt="" /></a>
-                                }
-                                
-                                <span class="byline">
-                                    @Html.GetInnerText(string.IsNullOrWhiteSpace(item.SubHeader) ?
-                                        (HtmlString)item.BodyText : new HtmlString(item.SubHeader), 100)
-                                </span>
+                            @if (string.IsNullOrWhiteSpace(item.Image) == false)
+                            {
+                                <a href="@item.Url" class="image image-full"><img src="@item.Image" alt="" /></a>
+                            }
 
-                                <div>
-                                    <a href="@item.Url" class="button">@Umbraco.GetDictionaryValue("ContinueReadingEvents")</a>
-                                </div>
-                            </section>
-                        </div>
+                            <span class="byline">
+                                @Html.GetInnerText(string.IsNullOrWhiteSpace(item.SubHeader) ?
+                                                         (HtmlString)item.BodyText : new HtmlString(item.SubHeader), 100)
+                            </span>
+
+                            <div>
+                                <a href="@item.Url" class="button">@Umbraco.GetDictionaryValue("ContinueReadingEvents")</a>
+                            </div>
+                        </section>
                     }
                 </div>
             </article>

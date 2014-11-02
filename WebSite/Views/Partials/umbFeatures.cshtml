@@ -11,32 +11,28 @@
     var allChildren = homePage.Descendants().Where("featuredPage");
 }
 <!-- Features -->
-<section class="is-features">
+<section class="featured-pages">
     @*<h2 class="major"><span>@Umbraco.GetDictionaryValue("FeaturedArticlesTitle")</span></h2>*@
-    <div>
-        <div class="row">
-            @foreach (var feature in allChildren)
-            {
-                <div class="3u">
-                    <!-- Feature -->
-                    <section class="is-feature">
-                        @if (!string.IsNullOrWhiteSpace(feature.Image))
-                        {
-                            <a href="@feature.Url" class="image image-full"><img src="@feature.Image" alt="" /></a>
-                        }
-                        <h3><a href="@feature.Url">@feature.Title</a></h3>
-                        <span class="byline">
-                            @if (feature.HasProperty("SubHeader") || feature.HasProperty("BodyText"))
-                            {
-                                @Html.GetInnerText(string.IsNullOrWhiteSpace(feature.SubHeader) ?
-                                    (HtmlString)feature.BodyText : new HtmlString(feature.SubHeader), 100)
-                            }
-                        </span>
-                    </section>
-                    <!-- /Feature -->
-                </div>
-            }
-        </div>
+    <div class="row">
+        @foreach (var feature in allChildren)
+        {
+            <section class="3u featured-page">
+                <!-- Feature -->
+                @if (!string.IsNullOrWhiteSpace(feature.Image))
+                {
+                    <a href="@feature.Url" class="image image-full"><img src="@feature.Image" alt="" /></a>
+                }
+                <h3><a href="@feature.Url">@feature.Title</a></h3>
+                <span class="byline">
+                    @if (feature.HasProperty("SubHeader") || feature.HasProperty("BodyText"))
+                    {
+                        @Html.GetInnerText(string.IsNullOrWhiteSpace(feature.SubHeader) ?
+                            (HtmlString)feature.BodyText : new HtmlString(feature.SubHeader), 100)
+                    }
+                </span>
+                <!-- /Feature -->
+            </section>
+        }
     </div>
 </section>
 <!-- /Features -->

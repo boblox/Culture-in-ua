@@ -13,19 +13,15 @@
 <div id="main-wrapper">
     <div id="main" class="container">
         <div class="row">
-            <div class="9u">
+            <div class="9u content">
                 <!-- Content -->
-                <article class="content">
-                    @RenderSection("Body")
-                </article>
+                @RenderSection("Body")
                 <!-- /Content -->
             </div>
-            <div class="3u">
-                <article class="sidebar">
-                    <!-- Sidebar -->
-                    @RenderSection("Sidebar")
-                    <!-- /Sidebar -->
-                </article>
+            <div class="3u sidebar">
+                <!-- Sidebar -->
+                @RenderSection("Sidebar")
+                <!-- /Sidebar -->
             </div>
         </div>
         @if (IsSectionDefined("Footer"))

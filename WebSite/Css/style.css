@@ -237,7 +237,6 @@ ul.separated-list {
         }
 
 ul.meta {
-    font-size: 0.85em;
     color: #a1aaa5;
 }
 
@@ -293,51 +292,35 @@ ul.meta {
 /* Section + Article Types                                                       */
 /*********************************************************************************/
 
-.is-highlight {
-    text-align: center;
+.featured-page {
 }
 
-.is-features {
+.text-content {
 }
 
-.is-feature {
-}
-
-.is-blog {
-}
-
-.is-post {
-}
-
-.is-post-summary {
-}
-
-.is-page-content {
-}
-
-    .is-page-content ol {
+    .text-content ol {
         padding-left: 2em;
         margin-bottom: 1em;
     }
 
-        .is-page-content ol li {
+        .text-content ol li {
             list-style: decimal inside;
         }
 
-    .is-page-content ul {
+    .text-content ul {
         padding-left: 2em;
         margin-bottom: 1em;
     }
 
-        .is-page-content ul li {
+        .text-content ul li {
             list-style: disc inside;
         }
 
-    .is-page-content td {
+    .text-content td {
         vertical-align: middle;
     }
 
-.is-gallery ul.breadcrumb {
+.gallery ul.breadcrumb {
     background-color: #c1cac5;
     padding: 0.2em 0.7em;
     border-radius: 5px;
@@ -346,7 +329,7 @@ ul.meta {
     margin-bottom: 2em;
 }
 
-    .is-gallery ul.breadcrumb li {
+    .gallery ul.breadcrumb li {
         display: inline-block;
     }
 
@@ -475,7 +458,6 @@ ul.meta {
     display: inline-block;
     vertical-align: top;
     border-radius: 8px;
-    font-size: 0.85em;
     color: #8b9790;
 }
 
@@ -744,7 +726,7 @@ ul.contact {
 /*********************************************************************************/
 /* Human Info                                                                    */
 /*********************************************************************************/
-section.human-overview-section {
+section.humans-overview-item {
     margin-bottom: 3em;
 }
 

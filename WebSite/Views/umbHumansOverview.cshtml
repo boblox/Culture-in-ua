@@ -23,19 +23,17 @@
                 ? item.Name
                 : item.Title;
 
-            <div class="3u">
-                <section class="human-overview-section">
-                    @if (string.IsNullOrWhiteSpace(item.Image) == false)
-                    {
-                        <a href="@item.Url" class="image image-full">
-                            @*<img src="@Html.GetThumbnailUrl((string)item.Image)" alt="" />*@
-                            <img src="@item.Image" alt="" />
-                        </a>
-                    }
-                    <h3><a href="@item.Url">@title</a></h3>
-                    <span>@item.Occupation</span>
-                </section>
-            </div>
+            <section class="3u humans-overview-item">
+                @if (string.IsNullOrWhiteSpace(item.Image) == false)
+                {
+                    <a href="@item.Url" class="image image-full">
+                        @*<img src="@Html.GetThumbnailUrl((string)item.Image)" alt="" />*@
+                        <img src="@item.Image" alt="" />
+                    </a>
+                }
+                <h3><a href="@item.Url">@title</a></h3>
+                <span>@item.Occupation</span>
+            </section>
         }
     </div>
 }
@@ -43,29 +41,23 @@
 <!-- Main -->
 <div id="main-wrapper">
     <div id="main" class="container">
-        <div class="row">
-            @*<div class="12u skel-cell-mainContent">*@
-            <!-- Content -->
-            <article class="content">
+        <div class="row content">
+            <article class="humans-overview">
+                <!-- Content -->
                 <header>
                     <h1>@pageTitle</h1>
                 </header>
-                
-                <!--Render each itemsPerRow items in row-->
-                @for (int i = 0; i < (humanInfoItems.Count() + itemsPerRow - 1) / itemsPerRow; i++)
-                {
-                    @RenderRow(humanInfoItems.Skip(i * itemsPerRow).Take(itemsPerRow))
-                }
-            </article>
-            <!-- /Content -->
 
-        </div>
-        @* Don't display this overview*@
-        @*<div class="row">
-                <div class="12u">
-                    @{ Html.RenderPartial("umbFeatures"); }
+                <div class="humans-overview-items">
+                    <!--Render each itemsPerRow items in row-->
+                    @for (int i = 0; i < (humanInfoItems.Count() + itemsPerRow - 1) / itemsPerRow; i++)
+                    {
+                        @RenderRow(humanInfoItems.Skip(i * itemsPerRow).Take(itemsPerRow))
+                    }
                 </div>
-            </div>*@
+                <!-- /Content -->
+            </article>
+        </div>
     </div>
 </div>
 <!-- /Main -->

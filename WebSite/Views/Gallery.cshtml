@@ -34,15 +34,15 @@
                 : item.Title;
 
             <div class="3u">
-                <section class="gallery-sub-gallery-item">
+                <div class="gallery-sub-gallery-item">
                     @if (string.IsNullOrWhiteSpace(item.Image) == false)
                     {
-                        <a href="@item.Url" class="image image-full">
+                        <a href="@item.Url" class="image">
                             <img src="@Html.GetThumbnailUrl((string)item.Image)" alt="" />
                         </a>
                     }
                     <h3><a href="@item.Url">@title</a></h3>
-                </section>
+                </div>
             </div>
         }
     </div>
@@ -54,14 +54,14 @@
         @foreach (var item in images)
         {
             <div class="2u">
-                <section class="gallery-image-item">
+                <div class="gallery-image-item">
                     @if (!string.IsNullOrWhiteSpace(item.Url))
                     {
-                        <a href="@item.Url" class="image image-full" title="@item.Name">
+                        <a href="@item.Url" class="image" title="@item.Name">
                             <img src="@Html.GetThumbnailUrl((string)item.Url)" alt="" />
                         </a>
                     }
-                </section>
+                </div>
             </div>
         }
     </div>
@@ -75,29 +75,25 @@
 
 <div id="main-wrapper">
     <div id="main" class="container">
-        <div class="row">
+        <div class="row content">
             <!-- Content -->
-            <div class="12u">
-                <article class="content">
-                    <header>
-                        <h1>@pageTitle</h1>
-                    </header>
+            <article class="gallery">
+                <header>
+                    <h1>@pageTitle</h1>
+                </header>
 
-                    <section class="is-gallery">
-                        @{ Html.RenderPartial("/Views/Partials/Breadcrumb.cshtml"); }
+                @{ Html.RenderPartial("/Views/Partials/Breadcrumb.cshtml"); }
 
-                        <!--Render each itemsPerRow items in row-->
-                        @for (int i = 0; i < (childGalleries.Count() + subGalleriesPerRow - 1) / subGalleriesPerRow; i++)
-                        {
-                            @RenderSubGalleryRow(childGalleries.Skip(i * subGalleriesPerRow).Take(subGalleriesPerRow))
-                        }
-                        @for (int i = 0; i < (media.Count() + imagesPerRow - 1) / imagesPerRow; i++)
-                        {
-                            @RenderImagesRow(media.Skip(i * imagesPerRow).Take(imagesPerRow))
-                        }
-                    </section>
-                </article>
-            </div>
+                <!--Render each itemsPerRow items in row-->
+                @for (int i = 0; i < (childGalleries.Count() + subGalleriesPerRow - 1) / subGalleriesPerRow; i++)
+                {
+                    @RenderSubGalleryRow(childGalleries.Skip(i * subGalleriesPerRow).Take(subGalleriesPerRow))
+                }
+                @for (int i = 0; i < (media.Count() + imagesPerRow - 1) / imagesPerRow; i++)
+                {
+                    @RenderImagesRow(media.Skip(i * imagesPerRow).Take(imagesPerRow))
+                }
+            </article>
             <!-- /Content -->
         </div>
     </div>
