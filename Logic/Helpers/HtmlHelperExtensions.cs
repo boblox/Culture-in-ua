@@ -64,8 +64,8 @@ namespace Logic.Helpers
 
         public static MvcHtmlString GetThumbnailUrl(this HtmlHelper html, string url)
         {
-            var extension = Path.GetExtension(url);
-            return new MvcHtmlString(url.TrimEnd(extension) + "_thumb" + extension);
+            return new MvcHtmlString(string.Format("/ImageGen.ashx?image={0}&class=thumbnail",
+                url));
         }
     }
 }

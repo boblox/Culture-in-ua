@@ -7,7 +7,7 @@ using Logic.Helpers;
 namespace WebSite
 {
     /// <summary>
-    /// Summary description for Gloval
+    /// Summary description for Global
     /// </summary>
     public class Global : Umbraco.Web.UmbracoApplication
     {

@@ -20,26 +20,28 @@
 
 <!-- Archives -->
 <ul class="separated-list">
-    @foreach (var newsItem in newsItems)
+    @foreach (var item in newsItems)
     {
         // If the editor has not explicitly provided the "Page title" property page
         // then just show the name of the page otherwise show the provided title
-        var title = string.IsNullOrWhiteSpace(newsItem.Title)
-            ? newsItem.Name
-            : newsItem.Title;
+        var title = string.IsNullOrWhiteSpace(item.Title)
+            ? item.Name
+            : item.Title;
 
         // If the editor has not explicitly set the publishDate property then show the create date
-        var dateTime = newsItem.PublishDate == default(DateTime)
-            ? newsItem.CreateDate
-            : newsItem.PublishDate;
+        var dateTime = item.PublishDate == default(DateTime)
+            ? item.CreateDate
+            : item.PublishDate;
 
         <li>
             <article class="news-item">
-                @if (!string.IsNullOrWhiteSpace(newsItem.Image))
+                @if (!string.IsNullOrWhiteSpace(item.Image))
                 {
-                    <a href="@newsItem.Url" class="image image-full"><img src="@newsItem.Image" alt="" /></a>
+                    <a href="@item.Url" class="image image-full">
+                        <img src="@Html.GetThumbnailUrl((string)item.Image)" alt="" />
+                    </a>
                 }
-                <h3><a href="@newsItem.Url">@title</a></h3>
+                <h3><a href="@item.Url">@title</a></h3>
                 <ul class="meta">
                     <li class="timestamp">@dateTime.ToString("f")</li>
                 </ul>

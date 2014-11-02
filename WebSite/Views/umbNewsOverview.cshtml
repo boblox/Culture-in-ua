@@ -51,20 +51,19 @@
                             : item.PublishDate;
                         <section class="3u news-item">
                             <h3><a href="@item.Url">@title</a></h3>
+                            @if (string.IsNullOrWhiteSpace(item.Image) == false)
+                            {
+                                <a href="@item.Url" class="image image-full">
+                                    <img src="@Html.GetThumbnailUrl((string)item.Image)" alt="" />
+                                </a>
+                            }
+                            <span class="byline">
+                                @Html.GetInnerText(string.IsNullOrWhiteSpace(item.SubHeader) ?
+                                    (HtmlString)item.BodyText : new HtmlString(item.SubHeader), 100)
+                            </span>
                             <ul class="meta">
                                 <li class="timestamp">@dateTime.ToString("f")</li>
                             </ul>
-
-                            @if (string.IsNullOrWhiteSpace(item.Image) == false)
-                            {
-                                <a href="@item.Url" class="image image-full"><img src="@item.Image" alt="" /></a>
-                            }
-
-                            <span class="byline">
-                                @Html.GetInnerText(string.IsNullOrWhiteSpace(item.SubHeader) ?
-                                                         (HtmlString)item.BodyText : new HtmlString(item.SubHeader), 100)
-                            </span>
-
                             <div>
                                 <a href="@item.Url" class="button">@Umbraco.GetDictionaryValue("ContinueReadingEvents")</a>
                             </div>
