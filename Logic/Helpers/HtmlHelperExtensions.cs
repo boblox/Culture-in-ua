@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
@@ -64,8 +65,8 @@ namespace Logic.Helpers
 
         public static MvcHtmlString GetThumbnailUrl(this HtmlHelper html, string url)
         {
-            return new MvcHtmlString(string.Format("/ImageGen.ashx?image={0}&class=thumbnail",
-                url));
+            return new MvcHtmlString(string.Format("/ImageGen.ashx?image={0}&Width={1}",
+                HttpUtility.UrlEncode(url), 400));
         }
     }
 }
