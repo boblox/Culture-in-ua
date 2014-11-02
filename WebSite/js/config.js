@@ -46,13 +46,12 @@ jQuery(function () {
         }
     });
 
-    jQuery('#nav > ul').dropotron({
-        offsetY: -6,
-        offsetX: -1,
+    $('#nav > ul').dropotron({
         mode: 'fade',
         noOpenerFade: true,
-        alignment: 'left',
-        detach: false
+        speed: 200,
+        alignment: 'center',
+        offsetX: 2
     });
 });
 

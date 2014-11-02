@@ -157,8 +157,8 @@ ul.meta {
 
 /*Menu*/
 #nav {
-    height: 3.5em;
-    line-height: 3.5em;
+    height: 3.25em;
+    line-height: 3.25em;
     text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1em;
@@ -172,7 +172,8 @@ ul.meta {
     }
 
     #nav li {
-        /*margin: 0 0.5em 0 0.5em;*/
+        display: inline-block;
+        margin: 0 0.5em 0 0.5em;
         /*top: 0;*/
         /*position: relative;*/ /*If uncomment-then menu dropdowns don't work'*/
         -moz-transition: top .15s ease-in-out;
@@ -182,6 +183,10 @@ ul.meta {
         transition: top .15s ease-in-out;
     }
 
+        #nav li > ul {
+            display: none;
+        }
+
         /*Common styling for menu item*/
         #nav li a {
             /*position: relative;*/
@@ -190,6 +195,8 @@ ul.meta {
             padding: 0.25em 1.5em;
             outline: 0;
             color: #6b7770;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
             -moz-transition: background-color .075s ease-in-out, color .075s ease-in-out;
             -webkit-transition: background-color .075s ease-in-out, color .075s ease-in-out;
             -o-transition: background-color .075s ease-in-out, color .075s ease-in-out;
@@ -197,50 +204,84 @@ ul.meta {
             transition: background-color .075s ease-in-out, color .075s ease-in-out;
         }
 
-        #nav li:hover > a {
+        #nav li:hover a,
+        #nav li:hover span,
+        #nav li.active a,
+        #nav li.active span {
             background: #C1CAC5;
             color: #fff;
         }
 
-    #nav ul.dropotron {
-        border: 0.4em solid #C1CAC5;
-        border-radius: 6px;
-        background: #C1CAC5;
-    }
-
-        #nav ul.dropotron a {
-            border-top: 1px solid rgba(255, 255, 255, 0.45);
+        #nav li.current {
         }
 
-        #nav ul.dropotron li:first-child > a {
-            border-top: 0 none;
-        }
+            #nav li.current a {
+                background: #b1ddab;
+                color: #fff;
+            }
 
-    /*Zero level*/
-    #nav > ul > li {
-        display: inline-block;
-        margin: 0 0.5em 0 0.5em;
+.dropotron {
+    background: #6B7770;
+    color: #fff;
+    border-radius: 6px;
+    line-height: 2.75em;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1em 0;
+    text-align: left;
+    min-width: 14em;
+    margin-top: -1em;
+    box-shadow: 0 1em 2em 0 rgba(0,0,0,0.1);
+}
+
+    .dropotron li {
     }
 
-        #nav > ul > li > a {
-            border-bottom-left-radius: 6px;
-            border-bottom-right-radius: 6px;
+        .dropotron li > a,
+        .dropotron li > span {
+            display: block;
+            color: #D7DAD8;
+            text-decoration: none;
+            padding: 0 1.25em;
+        }
+
+        .dropotron li:hover > a,
+        .dropotron li:hover > span,
+        .dropotron li.active > a,
+        .dropotron li.active > span {
+            color: #fff;
+            background: #7B8780;
+        }
+
+        .dropotron li:first-child {
+            border-top: 0;
         }
 
     /*First level*/
-    #nav ul.dropotron.level-0 {
-        margin-top: 0.3em;
-        margin-left: 8px;
+    .dropotron.level-0 {
+        margin-top: 1em;
+        font-size: 0.9em;
     }
+
+        .dropotron.level-0:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            margin-left: -1em;
+            top: -0.65em;
+            border-bottom: solid 1em #6B7770;
+            border-left: solid 1em transparent;
+            border-right: solid 1em transparent;
+        }
 
     /*Selected item in menu*/
-    #nav li.current_page_item {
+    #nav li.current_page_item a,
+    .dropotron li.current_page_item > a {
+        background: #e3daa8;
+        color: #fff;
     }
-
-        #nav li.current_page_item > a {
-            background: #e3daa8;
-            color: #fff;
-        }
 
 /*********************************************************************************/
 /* Main                                                                          */
