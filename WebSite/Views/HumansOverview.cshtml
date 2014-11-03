@@ -1,6 +1,6 @@
 ﻿@inherits UmbracoTemplatePage
 @{
-    Layout = "umbLayout.cshtml";
+    Layout = "ContentBase.cshtml";
 
     // If the editor has not explicitly provided the "Page title" property page
     // then just show the name of the page otherwise show the provided title
@@ -38,26 +38,21 @@
     </div>
 }
 
-<!-- Main -->
-<div id="main-wrapper">
-    <div id="main" class="container">
-        <div class="row content">
-            <article class="humans-overview">
-                <!-- Content -->
-                <header>
-                    <h1>@pageTitle</h1>
-                </header>
+@section Body
+{
+    <article class="humans-overview">
+        <!-- Content -->
+        <header>
+            <h1>@pageTitle</h1>
+        </header>
 
-                <div class="humans-overview-items">
-                    <!--Render each itemsPerRow items in row-->
-                    @for (int i = 0; i < (humanInfoItems.Count() + itemsPerRow - 1) / itemsPerRow; i++)
-                    {
-                        @RenderRow(humanInfoItems.Skip(i * itemsPerRow).Take(itemsPerRow))
-                    }
-                </div>
-                <!-- /Content -->
-            </article>
+        <div class="humans-overview-items">
+            <!--Render each itemsPerRow items in row-->
+            @for (int i = 0; i < (humanInfoItems.Count() + itemsPerRow - 1) / itemsPerRow; i++)
+            {
+                @RenderRow(humanInfoItems.Skip(i * itemsPerRow).Take(itemsPerRow))
+            }
         </div>
-    </div>
-</div>
-<!-- /Main -->
+        <!-- /Content -->
+    </article>
+}

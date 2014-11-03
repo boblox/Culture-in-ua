@@ -217,14 +217,14 @@ ul.meta {
         left: 0;
         top: 0;
         text-indent: -9999px;
-        background: #e3daa8 url('../images/mobileUI-site-nav-opener-bg.svg') 8px 14px no-repeat;
+        background: #98c34d url('../images/mobileUI-site-nav-opener-bg.svg') 8px 14px no-repeat;
         width: 44px;
         height: 44px;
         z-index: 1001;
     }
 
         #titleBar .toggle:active {
-            background-color: #ebe3b2;
+            background-color: #b6dd73;
         }
 
 #navPanel {

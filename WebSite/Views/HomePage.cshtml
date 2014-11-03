@@ -1,0 +1,14 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = "ContentBase.cshtml";
+}
+
+@section Body
+{
+    @{Html.RenderPartial("/Views/Partials/umbFeatures.cshtml");}
+}
+
+@section Sidebar
+{
+    @{Html.RenderPartial("/Views/Partials/umbLatestNewsWithHeaderWidget.cshtml");}
+}

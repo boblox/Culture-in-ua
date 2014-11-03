@@ -1,6 +1,6 @@
 ﻿@inherits UmbracoTemplatePage
 @{
-    Layout = "umbContentPageBase.cshtml";
+    Layout = "ContentBase.cshtml";
 
     // If the editor has not explicitly provided the "Page title" property page
     // then just show the name of the page otherwise show the provided title
@@ -14,7 +14,6 @@
     <script src="/js/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="/css/OwlCarousel/owl.carousel.css" />
     <link rel="stylesheet" href="/css/OwlCarousel/owl.theme.green.css" />
-    @*<link rel="stylesheet" href="/css/animate.css" />*@
 }
 
 @section Body
@@ -26,12 +25,7 @@
         @CurrentPage.BodyText
     </div>
 }
-
 @section Sidebar
 {
     @{ Html.RenderPartial("umbLatestNewsWithHeaderWidget"); }
 }
-
-@*@section Footer{
-        @{ Html.RenderPartial("umbFeatures"); }
-    }*@
