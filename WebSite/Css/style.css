@@ -296,9 +296,11 @@ ul.meta {
     display: block;
     text-decoration: none;
     color: inherit;
+    /*padding: 0.5em;*/
     /*background-color: #b6dd73;*/
     /*border: 0.3em #b6dd73 dashed;
     border-radius: 14px;*/
+    transition: transform 0.3s ease-in-out;
 }
 
     .featured-page:hover {
@@ -306,6 +308,10 @@ ul.meta {
         cursor: pointer;
         border-radius: 14px;
         border: 0.3em #b6dd73 dashed;
+    }
+
+    .featured-page h3 {
+        margin: 0em 0.5em 0 0.5em;
     }
 
     .featured-page .byline {
