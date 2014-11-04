@@ -4,15 +4,20 @@
     var parent = Model.Parent;
     @DrawNode(parent)
     @DrawVisibleChildNodes(parent)
-    var newsRoot = parent.Children().FirstOrDefault(i => i.DocumentTypeAlias == "umbNewsOverview");
+    var newsRoot = parent.Children().FirstOrDefault(i => i.DocumentTypeAlias == "NewsOverview");
     if (newsRoot != null)
     {
         @DrawChildNodes(newsRoot)
     }
-    var humanNodes = parent.Descendants("umbHumansOverview");
+    var humanNodes = parent.Descendants("HumansOverview");
     foreach (var humanNode in humanNodes)
     {
         @DrawChildNodes(humanNode)
+    }
+    var galleryRoot = parent.Children().FirstOrDefault(i => i.DocumentTypeAlias == "Gallery");
+    if (galleryRoot != null)
+    {
+        @DrawChildNodes(galleryRoot)
     }
 }
 

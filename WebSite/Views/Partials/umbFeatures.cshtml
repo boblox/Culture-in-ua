@@ -16,6 +16,17 @@
     <div class="row">
         @foreach (var item in allChildren)
         {
+            string title;
+            if (item.DocumentTypeAlias == "Gallery")
+            {
+                var rootGallery = homePage.Galleries.First();
+                title = string.Format("{0} : {1}", rootGallery.Title, item.Title);
+            }
+            else
+            {
+                title = item.Title;
+            }
+
             <section class="3u featured-page">
                 <!-- Feature -->
                 @if (!string.IsNullOrWhiteSpace(item.Image))
@@ -24,7 +35,7 @@
                         <img src="@Html.GetThumbnailUrl((string)item.Image)" alt="" />
                     </a>
                 }
-                <h3><a href="@item.Url">@item.Title</a></h3>
+                <h3><a href="@item.Url">@title</a></h3>
                 <span class="byline">
                     @if (item.HasProperty("SubHeader") || item.HasProperty("BodyText"))
                     {
