@@ -5,10 +5,17 @@
 
 @section Body
 {
-    @{Html.RenderPartial("/Views/Partials/umbFeatures.cshtml");}
+    <div class="home-page">
+        <div class="row">
+            @{Html.RenderPartial("/Views/Partials/Features.cshtml");}
+        </div>
+        <div class="row">
+            @{ Html.RenderPartial("/Views/Partials/NewsHorizontal.cshtml"); }
+        </div>
+    </div>
 }
 
-@section Sidebar
-{
-    @{Html.RenderPartial("/Views/Partials/umbLatestNewsWithHeaderWidget.cshtml");}
-}
+@*@section Sidebar
+    {
+        @{Html.RenderPartial("/Views/Partials/NewsWithHeaderSidebar.cshtml");}
+    }*@

@@ -13,7 +13,7 @@
 <!-- Features -->
 <section class="featured-pages">
     @*<h2 class="major"><span>@Umbraco.GetDictionaryValue("FeaturedArticlesTitle")</span></h2>*@
-    <div class="row">
+    <div class="row oneandhalf">
         @foreach (var item in allChildren)
         {
             string title;
@@ -27,23 +27,27 @@
                 title = item.Title;
             }
 
-            <section class="3u featured-page">
-                <!-- Feature -->
-                @if (!string.IsNullOrWhiteSpace(item.Image))
-                {
-                    <a href="@item.Url" class="image image-full">
-                        <img src="@Html.GetThumbnailUrl((string)item.Image)" alt="" />
-                    </a>
-                }
-                <h3><a href="@item.Url">@title</a></h3>
-                <span class="byline">
-                    @if (item.HasProperty("SubHeader") || item.HasProperty("BodyText"))
+            <section class="3u">
+                <a class="featured-page" href="@item.Url">
+                    <!-- Feature -->
+                    @if (!string.IsNullOrWhiteSpace(item.Image))
                     {
-                        @Html.GetInnerText(string.IsNullOrWhiteSpace(item.SubHeader) ?
-                            (HtmlString)item.BodyText : new HtmlString(item.SubHeader), 100)
+                        <div href="@item.Url" class="image image-full">
+                            <img src="@Html.GetThumbnailUrl((string) item.Image)" alt="" />
+                        </div>
                     }
-                </span>
-                <!-- /Feature -->
+                    <h3>
+                        <span href="@item.Url">@title</span>
+                    </h3>
+                    <span class="byline">
+                        @if (item.HasProperty("SubHeader") || item.HasProperty("BodyText"))
+                        {
+                            @Html.GetInnerText(string.IsNullOrWhiteSpace(item.SubHeader) ?
+                                (HtmlString)item.BodyText : new HtmlString(item.SubHeader), 100)
+                        }
+                    </span>
+                    <!-- /Feature -->
+                </a>
             </section>
         }
     </div>

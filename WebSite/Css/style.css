@@ -107,7 +107,7 @@ p, ol, dl, table {
 
 section,
 article {
-    margin-bottom: 6em;
+    margin-bottom: 2em;
 }
 
     section > :last-child,
@@ -293,7 +293,24 @@ ul.meta {
 /*********************************************************************************/
 
 .featured-page {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    /*background-color: #b6dd73;*/
+    /*border: 0.3em #b6dd73 dashed;
+    border-radius: 14px;*/
 }
+
+    .featured-page:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+        border-radius: 14px;
+        border: 0.3em #b6dd73 dashed;
+    }
+
+    .featured-page .byline {
+        margin: 0em 0.5em 1em 0.5em;
+    }
 
 .text-content {
 }
