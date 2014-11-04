@@ -61,7 +61,7 @@ namespace Logic.Controllers
         [ChildActionOnly]
         public ActionResult Index()
         {
-            return PartialView("umbWorkShopApplication", new WorkShopApplication());
+            return PartialView("WorkShopApplication", new WorkShopApplication());
         }
 
         #endregion

@@ -354,7 +354,7 @@ ul.meta {
 }
 
     .owl-carousel-prev:hover, .owl-carousel-next:hover {
-        background-color: #4dc7a0;
+        background-color: #98c34d;
     }
 
 .owl-carousel-prev {
@@ -372,5 +372,10 @@ ul.meta {
     .owl-carousel-next:after {
         content: "→";
     }
+
+.owl-theme .owl-dots .owl-dot.active span, 
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: none repeat scroll 0 0 #98c34d !important;
+}
 
 /* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

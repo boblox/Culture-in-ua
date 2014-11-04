@@ -78,10 +78,10 @@ namespace Logic.Controllers
                 if (count >= MaxApplicationsCount)
                 {
                     ViewData["Applications count limit exceeded"] = true;
-                    return PartialView("umbWorkShopFirstDayApplication");
+                    return PartialView("WorkShopFirstDayApplication");
                 }
             }
-            return PartialView("umbWorkShopFirstDayApplication", new WorkShopFirstDayApplication());
+            return PartialView("WorkShopFirstDayApplication", new WorkShopFirstDayApplication());
         }
 
         #endregion

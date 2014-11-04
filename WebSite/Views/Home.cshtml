@@ -7,10 +7,14 @@
 {
     <div class="home-page">
         <div class="row">
-            @{Html.RenderPartial("/Views/Partials/Features.cshtml");}
+            <div class="12u">
+                @{ Html.RenderPartial("/Views/Partials/Features.cshtml"); }
+            </div>
         </div>
         <div class="row">
-            @{ Html.RenderPartial("/Views/Partials/NewsHorizontal.cshtml"); }
+            <div class="12u">
+                @{ Html.RenderPartial("/Views/Partials/NewsHorizontal.cshtml"); }
+            </div>
         </div>
     </div>
 }
