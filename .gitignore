@@ -12,7 +12,7 @@
 [Rr]elease/
 x64/
 build/
-[Bb]in/
+#[Bb]in/
 [Oo]bj/
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
@@ -166,3 +166,5 @@ WebSite/App_Data/preview
 WebSite/Media
 WebSite/App_Data/cache
 WebSite/data/cached
+WebSite/bin/uk-ua/Logic.resources.dll
+WebSite/bin/Logic.dll
