@@ -168,3 +168,5 @@ WebSite/App_Data/cache
 WebSite/data/cached
 WebSite/bin/uk-ua/Logic.resources.dll
 WebSite/bin/Logic.dll
+WebSite/bin/Site.dll
+WebSite/bin/Site.dll.config

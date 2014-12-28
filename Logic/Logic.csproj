@@ -52,11 +52,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="umbraco">
-      <HintPath>..\WebSite\Bin\umbraco.dll</HintPath>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.Core, Version=1.0.5261.28127, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WebSite\Bin\Umbraco.Core.dll</HintPath>
+    <Reference Include="Umbraco.Core">
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\Umbraco.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +65,7 @@
     <Compile Include="DAL\DataContext.cs" />
     <Compile Include="Enums\LegalStatus.cs" />
     <Compile Include="Enums\EnglishLevel.cs" />
+    <Compile Include="Helpers\Global.cs" />
     <Compile Include="Helpers\DbCsvReader.cs" />
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Helpers\HtmlHelperExtensions.cs" />
