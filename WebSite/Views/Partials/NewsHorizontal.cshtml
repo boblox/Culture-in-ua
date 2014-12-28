@@ -40,6 +40,10 @@
                         </a>
                     }
                     <h3><a href="@item.Url">@title</a></h3>
+                    <span class="byline">
+                        @Html.GetInnerText(string.IsNullOrWhiteSpace(item.SubHeader) ?
+                                    (HtmlString)item.BodyText : new HtmlString(item.SubHeader), 100)
+                    </span>
                     <ul class="meta">
                         <li class="timestamp">@dateTime.ToString("f")</li>
                     </ul>
