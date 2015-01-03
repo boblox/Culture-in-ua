@@ -28,7 +28,8 @@
             }
 
             <div class="3u">
-                <a class="featured-page" href="@item.Url">
+                <!--New version-->
+                @*<a class="featured-page" href="@item.Url">
                     <!-- Feature -->
                     @if (!string.IsNullOrWhiteSpace(item.Image))
                     {
@@ -47,7 +48,27 @@
                         }
                     </span>
                     <!-- /Feature -->
-                </a>
+                </a>*@
+                <article class="featured-page">
+                    <!-- Feature -->
+                    @if (!string.IsNullOrWhiteSpace(item.Image))
+                    {
+                        <a href="@item.Url" class="image image-full">
+                            <img src="@Html.GetThumbnailUrl((string) item.Image)" alt="" />
+                        </a>
+                    }
+                    <h3>
+                        <a href="@item.Url">@title</a>
+                    </h3>
+                    <span class="byline">
+                        @if (item.HasProperty("SubHeader") || item.HasProperty("BodyText"))
+                        {
+                            @Html.GetInnerText(string.IsNullOrWhiteSpace(item.SubHeader) ?
+                                (HtmlString)item.BodyText : new HtmlString(item.SubHeader), 100)
+                        }
+                    </span>
+                    <!-- /Feature -->
+                </article>
             </div>
         }
     </div>
