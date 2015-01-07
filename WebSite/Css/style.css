@@ -2,6 +2,27 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../Fonts/OpenSans.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../Fonts/OpenSans-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Open Sans Condensed";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../Fonts/OpenSans-CondensedBold.woff") format("woff");
+}
+
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;

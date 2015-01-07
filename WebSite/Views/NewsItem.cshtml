@@ -1,4 +1,5 @@
-﻿@inherits UmbracoTemplatePage
+﻿@using System.Web.Optimization
+@inherits UmbracoTemplatePage
 @{
     Layout = "ContentBase.cshtml";
 
@@ -7,22 +8,29 @@
     var pageTitle = string.IsNullOrWhiteSpace(CurrentPage.Title)
         ? CurrentPage.Name
         : CurrentPage.Title;
+
+    // If the editor has not explicitly set the publishDate property then show the create date
+    var dateTime = CurrentPage.PublishDate == default(DateTime)
+        ? CurrentPage.CreateDate
+        : CurrentPage.PublishDate;
 }
 
 @section Scripts
 {
-    <script src="/js/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="/css/OwlCarousel/owl.carousel.css" />
-    <link rel="stylesheet" href="/css/OwlCarousel/owl.theme.green.css" />
-    @*<link rel="stylesheet" href="/css/animate.css" />*@
+    @Styles.Render("~/bundles/carousel-css")
+    @Scripts.Render("~/bundles/carousel-js")
 }
 
 @section Body
 {
+    <header>
+        <h1>@pageTitle</h1>
+    </header>
+    <ul class="meta">
+        <li class="timestamp">@dateTime.ToString("f")</li>
+    </ul>
     <div class="text-content">
-        <header>
-            <h1>@pageTitle</h1>
-        </header>
+
         @CurrentPage.BodyText
     </div>
 }

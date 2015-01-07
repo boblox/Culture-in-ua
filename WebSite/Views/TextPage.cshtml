@@ -1,4 +1,5 @@
-﻿@inherits UmbracoTemplatePage
+﻿@using System.Web.Optimization
+@inherits UmbracoTemplatePage
 @{
     Layout = "ContentBase.cshtml";
 
@@ -11,17 +12,16 @@
 
 @section Scripts
 {
-    <script src="/js/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="/css/OwlCarousel/owl.carousel.css" />
-    <link rel="stylesheet" href="/css/OwlCarousel/owl.theme.green.css" />
+    @Styles.Render("~/bundles/carousel-css")
+    @Scripts.Render("~/bundles/carousel-js")
 }
 
 @section Body
 {
+    <header>
+        <h1>@pageTitle</h1>
+    </header>
     <div class="text-content">
-        <header>
-            <h1>@pageTitle</h1>
-        </header>
         @CurrentPage.BodyText
     </div>
 }

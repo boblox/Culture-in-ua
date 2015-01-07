@@ -1,4 +1,5 @@
-﻿@inherits UmbracoTemplatePage
+﻿@using System.Web.Optimization
+@inherits UmbracoTemplatePage
 @{
     Layout = "ContentBase.cshtml";
 
@@ -69,8 +70,8 @@
 
 @section Scripts
 {
-    <script src="/js/magnific.popup.min.js"></script>
-    <link rel="stylesheet" href="/css/magnific-popup.css" />
+    @Styles.Render("~/bundles/magnific-popup-css")
+    @Scripts.Render("~/bundles/magnific-popup-js")
 }
 
 @section Body
