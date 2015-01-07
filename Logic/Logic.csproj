@@ -30,12 +30,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="businesslogic, Version=1.0.5462.37510, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\businesslogic.dll</HintPath>
+    </Reference>
+    <Reference Include="cms, Version=1.0.5462.37511, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\cms.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces, Version=1.0.5462.37501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\interfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -67,6 +79,7 @@
     <Compile Include="Helpers\DbCsvReader.cs" />
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Helpers\HtmlHelperExtensions.cs" />
+    <Compile Include="Helpers\LanguageHelper.cs" />
     <Compile Include="Helpers\MyDateTimeModelBinder.cs" />
     <Compile Include="Helpers\RequiredTrueAttribute.cs" />
     <Compile Include="Migrations\201407310158317_InitialCreate.cs" />
@@ -83,6 +96,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\LanguageData.cs" />
     <Compile Include="Models\WorkShopVolunteerApplication.cs" />
     <Compile Include="Models\WorkShopFirstDayApplication.cs" />
     <Compile Include="Models\WorkShopApplication.cs" />

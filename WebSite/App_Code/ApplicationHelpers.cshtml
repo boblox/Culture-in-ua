@@ -4,11 +4,6 @@
 
 @functions
 {
-    private static HtmlHelper<TModel> GetHtml<TModel>()
-    {
-        return ((WebViewPage<TModel>)CurrentPage).Html;
-    }
-
     public delegate MvcHtmlString EditorDelegate<TModel, TValue>(Expression<Func<TModel, TValue>> expression);
 
     public static HelperResult PersonalData<TModel, TValue>(HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, EditorDelegate<TModel, TValue> editor)

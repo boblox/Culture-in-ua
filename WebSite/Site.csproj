@@ -274,8 +274,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\MultiLanguage\CopyDocumentToRelatedOnPublish.cs" />
-    <Content Include="App_Code\MultiLanguage\Data.cs" />
     <Compile Include="Helpers\BundleConfig.cs" />
     <Compile Include="Helpers\Global.cs" />
     <Compile Include="Helpers\NonOrderingBundleOrderer.cs" />
@@ -293,7 +291,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\ApplicationHelpers.cshtml" />
-    <Content Include="App_Code\MultiLanguage\Functions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\grid.editors.config.js" />
