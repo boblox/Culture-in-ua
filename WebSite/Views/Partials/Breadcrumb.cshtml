@@ -1,8 +1,11 @@
 ﻿@inherits UmbracoTemplatePage
-<ul class="breadcrumb">
-    @foreach (var level in CurrentPage.Ancestors().Where("Level>1").OrderBy("Level"))
-    {
-        <li><a href="@level.Url">@level.Title</a>&nbsp;/</li>
-    }
-    <li>@CurrentPage.Title</li>
-</ul>
+@if (CurrentPage.Level > 2)
+{
+    <ul class="breadcrumb">
+        @foreach (var level in CurrentPage.Ancestors().Where("Level>1").OrderBy("Level"))
+        {
+            <li><a href="@level.Url">@level.Title</a>&nbsp;\</li>
+        }
+        <li>@CurrentPage.Title</li>
+    </ul>
+}

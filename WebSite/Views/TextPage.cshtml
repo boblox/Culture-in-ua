@@ -21,9 +21,11 @@
     <header>
         <h1>@pageTitle</h1>
     </header>
+    @{ Html.RenderPartial("/Views/Partials/Breadcrumb.cshtml"); }
     <div class="text-content">
         @CurrentPage.BodyText
     </div>
+    @{ Html.RenderPartial("/Views/Partials/ChildPagesList.cshtml"); }
 }
 @section Sidebar
 {

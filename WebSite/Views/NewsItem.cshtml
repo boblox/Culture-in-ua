@@ -26,6 +26,7 @@
     <header>
         <h1>@pageTitle</h1>
     </header>
+    @{ Html.RenderPartial("/Views/Partials/Breadcrumb.cshtml"); }
     <ul class="meta">
         <li class="timestamp">@dateTime.ToString("f")</li>
     </ul>

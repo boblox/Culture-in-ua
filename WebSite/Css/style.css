@@ -363,7 +363,11 @@ ul.meta {
         vertical-align: middle;
     }
 
-.gallery ul.breadcrumb {
+/*********************************************************************************/
+/* Breadcrumb                                                                    */
+/*********************************************************************************/
+
+ul.breadcrumb {
     background-color: #c1cac5;
     padding: 0.2em 0.7em;
     border-radius: 5px;
@@ -372,7 +376,7 @@ ul.meta {
     margin-bottom: 2em;
 }
 
-    .gallery ul.breadcrumb li {
+    ul.breadcrumb li {
         display: inline-block;
     }
 
